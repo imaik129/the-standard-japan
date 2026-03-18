@@ -106,6 +106,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/authors" className="font-accent text-xs text-muted hover:text-content transition-colors">
+                  Writers
+                </Link>
+              </li>
+              <li>
                 <Link href="/newsletter" className="font-accent text-xs text-muted hover:text-content transition-colors">
                   Newsletter
                 </Link>

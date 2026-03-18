@@ -82,3 +82,31 @@ body {
 .prose-editorial p {
   margin-bottom: 1.5rem;
 }
+
+/* Print styles for articles */
+@media print {
+  header,
+  footer,
+  .back-to-top,
+  .ticker-animate,
+  [aria-label="Back to top"],
+  nav[aria-label="Table of contents"],
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: #111;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #666;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+}

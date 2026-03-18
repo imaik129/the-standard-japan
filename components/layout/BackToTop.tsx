@@ -23,6 +23,7 @@ export default function BackToTop() {
 
   return (
     <button
+      data-print-hide
       onClick={scrollToTop}
       className="fixed bottom-8 right-8 z-40 p-3 bg-accent text-white rounded-full shadow-lg hover:bg-red-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
       aria-label="Back to top"

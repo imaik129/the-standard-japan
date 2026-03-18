@@ -3,7 +3,10 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getArticleBySlug, getRelatedArticles, getAllArticles } from '@/lib/mdx'
 import { extractFaqFromContent, getFaqSchema } from '@/lib/faq-schema'
+import { extractHowToSteps, getHowToSchema } from '@/lib/howto-schema'
+import { getAuthorBySlugOrName } from '@/lib/authors'
 import ArticleHero from '@/components/article/ArticleHero'
+import AuthorProfile from '@/components/article/AuthorProfile'
 import ArticleBody from '@/components/article/ArticleBody'
 import ArticleCard from '@/components/article/ArticleCard'
 import NewsletterBanner from '@/components/home/NewsletterBanner'
@@ -23,6 +26,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   if (!article) return {}
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
+  const author = getAuthorBySlugOrName(article.author)
+  const authorName = author ? author.name : article.author
 
   return {
     title: article.title,
@@ -33,7 +38,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       description: article.excerpt,
       type: 'article',
       publishedTime: article.publishedAt,
-      authors: [article.author],
+      authors: [authorName],
       url: `${baseUrl}/${article.category}/${article.slug}`,
       images: [
         {
@@ -60,7 +65,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   const article = getArticleBySlug(params.slug)
   if (!article) notFound()
 
+  const author = getAuthorBySlugOrName(article.author)
   const relatedArticles = getRelatedArticles(params.slug, article.category)
+  const readNext = getAllArticles().find((a) => a.slug !== params.slug && (a.category === article.category || a.tags?.some((t) => article.tags?.includes(t))))
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
   const articleUrl = `${baseUrl}/${article.category}/${article.slug}`
@@ -73,10 +80,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     image: article.coverImage,
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
-    author: {
-      '@type': 'Organization',
-      name: article.author,
-    },
+    author: author
+      ? { '@type': 'Person', name: author.name, url: `${baseUrl}/author/${author.slug}` }
+      : { '@type': 'Organization', name: article.author },
     publisher: {
       '@type': 'Organization',
       name: 'The Standard Japan',
@@ -97,6 +103,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   const faq = extractFaqFromContent(article.content)
   const faqSchema = getFaqSchema(faq, articleUrl)
+
+  const howToSteps = extractHowToSteps(article.content)
+  const howToSchema =
+    article.category === 'howto' && howToSteps.length >= 2
+      ? getHowToSchema(article.title, article.excerpt, howToSteps, articleUrl)
+      : null
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -120,6 +132,12 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -132,24 +150,45 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <ArticleHero article={article} />
 
         {/* Body */}
-        <ArticleBody content={article.content} />
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ArticleBody content={article.content} />
 
-        {/* Tags */}
-        {article.tags && article.tags.length > 0 && (
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-12">
-            <div className="border-t border-border pt-8 flex flex-wrap gap-2">
-              {article.tags.map((tag) => (
-                <a
-                  key={tag}
-                  href={`/search?q=${encodeURIComponent(tag)}`}
-                  className="font-accent text-[10px] tracking-widest text-muted uppercase border border-border px-3 py-1.5 hover:border-accent hover:text-content transition-colors"
-                >
-                  {tag}
-                </a>
-              ))}
+          {/* Author Profile */}
+          {author && (
+            <div className="pt-12">
+              <AuthorProfile author={author} />
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Tags */}
+          {article.tags && article.tags.length > 0 && (
+            <div className="pt-12">
+              <div className="border-t border-border pt-8 flex flex-wrap gap-2">
+                {article.tags.map((tag) => (
+                  <a
+                    key={tag}
+                    href={`/search?q=${encodeURIComponent(tag)}`}
+                    className="font-accent text-[10px] tracking-widest text-muted uppercase border border-border px-3 py-1.5 hover:border-accent hover:text-content transition-colors"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Read next */}
+          {readNext && (
+            <div className="pt-12">
+              <div className="border-t border-border pt-8">
+                <p className="font-accent text-[10px] tracking-widest text-muted uppercase mb-4">
+                  Read next
+                </p>
+                <ArticleCard article={readNext} variant="horizontal" />
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Newsletter */}
         <NewsletterBanner />

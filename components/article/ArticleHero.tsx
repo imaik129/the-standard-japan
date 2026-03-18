@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Clock, Calendar } from 'lucide-react'
 import { ArticleFrontmatter } from '@/lib/mdx'
+import { getAuthorBySlugOrName } from '@/lib/authors'
 import CategoryBadge from '@/components/ui/CategoryBadge'
 import ShareButtons from '@/components/article/ShareButtons'
 import Breadcrumbs from '@/components/article/Breadcrumbs'
@@ -10,6 +12,8 @@ interface ArticleHeroProps {
 }
 
 export default function ArticleHero({ article }: ArticleHeroProps) {
+  const author = getAuthorBySlugOrName(article.author)
+
   return (
     <div className="relative w-full h-[70vh] min-h-[500px] max-h-[800px] overflow-hidden">
       <Image
@@ -36,9 +40,25 @@ export default function ArticleHero({ article }: ArticleHeroProps) {
           </p>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-4">
-              <span className="font-accent text-sm font-semibold text-content">
-                {article.author}
-              </span>
+              {author ? (
+                <Link
+                  href={`/author/${author.slug}`}
+                  className="flex items-center gap-2 group"
+                >
+                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
+                    <span className="font-display text-xs font-bold text-accent">
+                      {author.name.charAt(0)}
+                    </span>
+                  </div>
+                  <span className="font-accent text-sm font-semibold text-content group-hover:text-accent transition-colors">
+                    {author.name}
+                  </span>
+                </Link>
+              ) : (
+                <span className="font-accent text-sm font-semibold text-content">
+                  {article.author}
+                </span>
+              )}
               <span className="text-border">·</span>
               <span className="flex items-center gap-1.5 font-accent text-sm text-muted">
                 <Calendar size={14} />

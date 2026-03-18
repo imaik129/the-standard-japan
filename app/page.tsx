@@ -18,6 +18,7 @@ export default function HomePage() {
   const cultureArticles = getArticlesByCategory('culture')
   const fashionArticles = getArticlesByCategory('fashion')
   const guideArticles = getArticlesByCategory('guide')
+  const howToArticles = getArticlesByCategory('howto')
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
   const jsonLd = {
@@ -80,6 +81,13 @@ export default function HomePage() {
       {fashionArticles.length > 0 && (
         <div className="border-t border-border bg-surface/20">
           <CategoryStrip title="Fashion" slug="fashion" articles={fashionArticles} />
+        </div>
+      )}
+
+      {/* How To Strip */}
+      {howToArticles.length > 0 && (
+        <div className="border-t border-border bg-surface/20">
+          <CategoryStrip title="How To" slug="howto" articles={howToArticles} />
         </div>
       )}
 

@@ -57,7 +57,7 @@ Every article should follow this skeleton:
 2. **"How to X in Japan"** — Etiquette, logistics. Onsen, izakaya, convenience store, etc.
 3. **Neighborhood guides** — "Shimokitazawa guide," "Nakameguro at night"
 4. **Comparisons** — "Kyoto vs Tokyo," "7-Eleven vs Lawson"
-5. **Trend pieces** — "Tokyo's underground jazz scene," "Emerging artists in 2024"
+5. **Trend pieces** — "Tokyo's underground jazz scene," "Emerging artists in 2025"
 
 ---
 
@@ -83,7 +83,7 @@ category: food
 excerpt: "First 50 chars with keyword. Rest of 150 chars with benefit."
 coverImage: "https://..."
 author: "The Standard Japan"
-publishedAt: "2024-03-15"
+publishedAt: "2025-03-15"
 readTime: 8
 featured: true
 tags: [primary, secondary, location, topic]
@@ -226,4 +226,4 @@ Before publishing, verify:
 
 ---
 
-*Last updated: March 2024*
+*Last updated: March 2025*

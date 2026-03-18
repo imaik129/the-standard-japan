@@ -12,6 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const authorUrls = [
+    { slug: 'yuki-tanaka', name: 'Yuki Tanaka' },
+    { slug: 'james-chen', name: 'James Chen' },
+    { slug: 'maya-yamamoto', name: 'Maya Yamamoto' },
+    { slug: 'alex-rivera', name: 'Alex Rivera' },
+    { slug: 'emma-foster', name: 'Emma Foster' },
+  ].map((a) => ({
+    url: `${baseUrl}/author/${a.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
   const categoryUrls = CATEGORIES.map((cat) => ({
     url: `${baseUrl}/${cat.slug}`,
     lastModified: new Date(),
@@ -56,7 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/authors`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
   ]
 
-  return [...staticUrls, ...categoryUrls, ...articleUrls]
+  return [...staticUrls, ...categoryUrls, ...authorUrls, ...articleUrls]
 }

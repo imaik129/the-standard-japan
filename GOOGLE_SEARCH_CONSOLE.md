@@ -199,4 +199,4 @@ Then in `app/layout.tsx` head:
 
 ---
 
-*Last updated: March 2024*
+*Last updated: March 2025*
