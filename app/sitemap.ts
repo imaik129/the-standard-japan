@@ -1,0 +1,50 @@
+import { MetadataRoute } from 'next'
+import { getAllArticles, CATEGORIES } from '@/lib/mdx'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
+  const articles = getAllArticles()
+
+  const articleUrls = articles.map((article) => ({
+    url: `${baseUrl}/${article.category}/${article.slug}`,
+    lastModified: new Date(article.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  const categoryUrls = CATEGORIES.map((cat) => ({
+    url: `${baseUrl}/${cat.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  const staticUrls = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/magazine`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/newsletter`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
+  ]
+
+  return [...staticUrls, ...categoryUrls, ...articleUrls]
+}
