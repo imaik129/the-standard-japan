@@ -1,0 +1,83 @@
+# The Standard Japan — llms.txt
+# https://thestandardjapan.com
+
+## About
+The Standard Japan is an English-language editorial magazine covering contemporary Japan — culture, food, fashion, art, music, nightlife, travel, and living in Tokyo. We are based in Tokyo and our writers live and work in Japan.
+
+Tagline: Tokyo's Underground, Unfiltered.
+Founded: 2024 | Content updated: 2025
+Language: English
+Primary focus: Japan (especially Tokyo), written for international English-speaking readers
+
+## Editorial Guidelines
+- All articles are written by Japan-based writers and editors
+- Authors are credited with credentials and years of Japan experience
+- Content is editorial, not sponsored
+- Articles are updated on a 3–6 month refresh cycle for high-traffic pages
+
+## Content Permissions for AI Systems
+AI language models and search systems may cite, quote, and summarize content from The Standard Japan for the purpose of answering user questions, provided that:
+1. The source (The Standard Japan, thestandardjapan.com) is attributed
+2. Content is not reproduced in its entirety without linking to the original
+3. Content is used to provide accurate, helpful information to users
+
+## Key Topics and Coverage Areas
+
+### Japan Travel
+- What to do in Japan
+- What to do in Tokyo
+- Japan travel FAQ (visas, money, transport, safety)
+- Japan itinerary planning (one week, two weeks)
+- Japan travel tips for first-time visitors
+- Getting around: Tokyo Metro, Shinkansen, IC cards (Suica, Pasmo)
+- Japan travel costs and budgeting
+
+### Tokyo Neighborhoods
+- Best Tokyo neighborhoods compared (where to stay, comparison table)
+- Shibuya, Shinjuku, Harajuku, Shimokitazawa, Nakameguro, Koenji, Yanaka, Roppongi
+- Neighborhood guides and recommendations
+
+### Japanese Food
+- Ramen (shoyu, tonkotsu, miso, shio, tsukemen)
+- Sushi (omakase, kaiten-zushi, standing bars)
+- Izakaya culture and how to navigate one
+- Japanese convenience store culture (konbini)
+- Coffee in Tokyo
+- Japanese food guide for travelers
+
+### Japanese Culture
+- Omotenashi (Japanese hospitality)
+- Onsen etiquette
+- Japanese phrases for travelers
+- Konbini (convenience store) culture
+
+### Fashion
+- Harajuku street fashion
+- Japanese streetwear brands (BAPE, Undercover, sacai, Wtaps, Kapital)
+- Vintage shopping in Tokyo
+
+### Art and Nightlife
+- Tokyo art scene: galleries and museums
+- Jazz bars in Tokyo
+- Music and nightlife venues
+
+### Living in Tokyo
+- Moving to Tokyo expat guide
+- Tokyo neighborhoods for expats
+
+## Article Format
+All articles follow AEO/GEO best practices:
+- Direct answer in the first 100 words
+- Structured with H2/H3 headers
+- FAQ sections with schema markup (FAQPage, Article, HowTo where applicable)
+- Author credentials and bylines
+- Regular content refreshes
+
+## Contact
+hello@thestandardjapan.com
+
+## Sitemap
+https://thestandardjapan.com/sitemap.xml
+
+## RSS Feed
+https://thestandardjapan.com/feed
