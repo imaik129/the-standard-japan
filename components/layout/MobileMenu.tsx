@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 import { CATEGORIES } from '@/lib/categories'
 
@@ -34,7 +35,16 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
       <div className="absolute right-0 top-0 bottom-0 w-80 bg-surface border-l border-border flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">
-          <span className="font-display text-lg font-bold">THE STANDARD</span>
+          <Link href="/" onClick={onClose} className="flex items-center gap-2">
+            <Image
+              src="/thestandardlogo.png"
+              alt="The Standard Japan"
+              width={28}
+              height={28}
+              className="object-contain"
+            />
+            <span className="font-display text-lg font-bold">THE STANDARD JAPAN</span>
+          </Link>
           <button
             onClick={onClose}
             className="text-muted hover:text-content transition-colors"
@@ -53,11 +63,29 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             <ul className="space-y-1">
               <li>
                 <Link
+                  href="/japan"
+                  onClick={onClose}
+                  className="block font-accent text-sm tracking-wider text-content py-2 border-b border-border/30 hover:text-accent transition-colors"
+                >
+                  Japan Guide
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/magazine"
                   onClick={onClose}
                   className="block font-accent text-sm tracking-wider text-content py-2 border-b border-border/30 hover:text-accent transition-colors"
                 >
                   All Stories
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/search"
+                  onClick={onClose}
+                  className="block font-accent text-sm tracking-wider text-content py-2 border-b border-border/30 hover:text-accent transition-colors"
+                >
+                  Search
                 </Link>
               </li>
               {CATEGORIES.map((cat) => (

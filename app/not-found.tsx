@@ -13,7 +13,7 @@ export default function NotFound() {
         <p className="font-body text-muted text-lg mb-8">
           This page doesn&apos;t exist — or maybe it never did. Try exploring the city instead.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Link
             href="/"
             className="bg-accent text-white font-accent font-semibold text-sm tracking-widest uppercase px-8 py-4 hover:bg-red-700 transition-colors"
@@ -26,6 +26,31 @@ export default function NotFound() {
           >
             Read Stories
           </Link>
+          <Link
+            href="/search"
+            className="border border-border text-content font-accent font-semibold text-sm tracking-widest uppercase px-8 py-4 hover:border-content hover:bg-white/5 transition-all"
+          >
+            Search
+          </Link>
+        </div>
+        <div className="border-t border-border pt-8">
+          <p className="font-accent text-[10px] tracking-widest text-muted uppercase mb-4">
+            Popular
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/food/best-ramen-tokyo" className="font-accent text-sm text-muted hover:text-content transition-colors">
+              Best Ramen
+            </Link>
+            <Link href="/culture/japanese-convenience-store-culture" className="font-accent text-sm text-muted hover:text-content transition-colors">
+              Konbini Guide
+            </Link>
+            <Link href="/guide/tokyo-neighborhood-guide" className="font-accent text-sm text-muted hover:text-content transition-colors">
+              Tokyo Neighborhoods
+            </Link>
+            <Link href="/about" className="font-accent text-sm text-muted hover:text-content transition-colors">
+              About
+            </Link>
+          </div>
         </div>
       </div>
     </div>

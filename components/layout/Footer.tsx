@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { CATEGORIES } from '@/lib/categories'
 import NewsletterForm from '@/components/ui/NewsletterForm'
 
@@ -34,13 +35,20 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/">
-              <span className="font-display text-lg font-bold text-content block mb-3">
+            <Link href="/" className="flex items-center gap-2 mb-3">
+              <Image
+                src="/thestandardlogo.png"
+                alt="The Standard Japan"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+              <span className="font-display text-lg font-bold text-content">
                 THE STANDARD JAPAN
               </span>
             </Link>
             <p className="text-muted text-xs font-body leading-relaxed">
-              The definitive English-language guide to contemporary Japan. Culture, food, fashion, art, nightlife — the real Tokyo, unfiltered.
+              The definitive English-language guide to Japan. Culture, food, fashion, art, nightlife — the real Tokyo, unfiltered. Your go-to resource for everything Japan.
             </p>
           </div>
 
@@ -88,6 +96,11 @@ export default function Footer() {
             </p>
             <ul className="space-y-2">
               <li>
+                <Link href="/japan" className="font-accent text-xs text-muted hover:text-content transition-colors">
+                  Japan Guide
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="font-accent text-xs text-muted hover:text-content transition-colors">
                   About
                 </Link>
@@ -100,6 +113,11 @@ export default function Footer() {
               <li>
                 <Link href="/magazine" className="font-accent text-xs text-muted hover:text-content transition-colors">
                   Magazine
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className="font-accent text-xs text-muted hover:text-content transition-colors">
+                  Search
                 </Link>
               </li>
               <li>
@@ -143,6 +161,12 @@ export default function Footer() {
               className="font-accent text-[11px] text-muted hover:text-content transition-colors tracking-wider"
             >
               Instagram
+            </a>
+            <a
+              href="/feed"
+              className="font-accent text-[11px] text-muted hover:text-content transition-colors tracking-wider"
+            >
+              RSS
             </a>
           </div>
         </div>

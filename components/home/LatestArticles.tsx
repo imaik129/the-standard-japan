@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ArticleFrontmatter } from '@/lib/mdx'
-import ArticleCard from '@/components/article/ArticleCard'
+import AnimatedArticleCard from '@/components/article/AnimatedArticleCard'
 
 interface LatestArticlesProps {
   articles: ArticleFrontmatter[]
@@ -25,8 +25,12 @@ export default function LatestArticles({ articles }: LatestArticlesProps) {
 
       {/* Grid: 3 col on desktop */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-        {articles.map((article) => (
-          <ArticleCard key={article.slug} article={article} />
+        {articles.map((article, i) => (
+          <AnimatedArticleCard
+            key={article.slug}
+            article={article}
+            delay={i * 80}
+          />
         ))}
       </div>
     </section>

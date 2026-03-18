@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ArticleFrontmatter } from '@/lib/mdx'
 import CategoryBadge from '@/components/ui/CategoryBadge'
+import ScrollIndicator from '@/components/home/ScrollIndicator'
 
 interface HeroProps {
   article: ArticleFrontmatter
@@ -69,13 +70,7 @@ export default function Hero({ article }: HeroProps) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-8 hidden md:flex flex-col items-center gap-2">
-        <span className="font-accent text-[10px] tracking-widest text-muted uppercase" style={{ writingMode: 'vertical-rl' }}>
-          Scroll
-        </span>
-        <div className="w-px h-12 bg-gradient-to-b from-muted to-transparent" />
-      </div>
+      <ScrollIndicator />
     </section>
   )
 }

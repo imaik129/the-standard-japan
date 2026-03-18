@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { ArticleFrontmatter } from '@/lib/mdx'
@@ -28,10 +30,13 @@ export default function CategoryStrip({ title, slug, articles }: CategoryStripPr
         </Link>
       </div>
 
-      {/* Horizontal scroll on mobile, grid on desktop */}
-      <div className="flex gap-6 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+      {/* Horizontal scroll on mobile, grid on desktop - snap scroll for better UX */}
+      <div className="flex gap-6 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scroll-smooth scrollbar-hide">
         {articles.slice(0, 4).map((article) => (
-          <div key={article.slug} className="min-w-[260px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+          <div
+            key={article.slug}
+            className="min-w-[260px] sm:min-w-0 flex-shrink-0 sm:flex-shrink snap-center"
+          >
             <ArticleCard article={article} />
           </div>
         ))}

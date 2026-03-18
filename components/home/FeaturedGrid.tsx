@@ -1,5 +1,5 @@
 import { ArticleFrontmatter } from '@/lib/mdx'
-import ArticleCard from '@/components/article/ArticleCard'
+import AnimatedArticleCard from '@/components/article/AnimatedArticleCard'
 import Link from 'next/link'
 
 interface FeaturedGridProps {
@@ -30,14 +30,19 @@ export default function FeaturedGrid({ articles }: FeaturedGridProps) {
         {/* Large main card */}
         {main && (
           <div className="lg:col-span-2">
-            <ArticleCard article={main} variant="large" />
+            <AnimatedArticleCard article={main} variant="large" delay={0} />
           </div>
         )}
 
         {/* Side cards */}
         <div className="flex flex-col gap-6">
-          {rest.slice(0, 2).map((article) => (
-            <ArticleCard key={article.slug} article={article} variant="default" />
+          {rest.slice(0, 2).map((article, i) => (
+            <AnimatedArticleCard
+              key={article.slug}
+              article={article}
+              variant="default"
+              delay={(i + 1) * 100}
+            />
           ))}
         </div>
       </div>

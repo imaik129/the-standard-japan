@@ -2,10 +2,12 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getArticleBySlug, getRelatedArticles, getAllArticles } from '@/lib/mdx'
+import { extractFaqFromContent, getFaqSchema } from '@/lib/faq-schema'
 import ArticleHero from '@/components/article/ArticleHero'
 import ArticleBody from '@/components/article/ArticleBody'
 import ArticleCard from '@/components/article/ArticleCard'
 import NewsletterBanner from '@/components/home/NewsletterBanner'
+import ReadingProgress from '@/components/article/ReadingProgress'
 
 interface ArticlePageProps {
   params: { category: string; slug: string }
@@ -20,15 +22,19 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const article = getArticleBySlug(params.slug)
   if (!article) return {}
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
+
   return {
     title: article.title,
     description: article.excerpt,
+    keywords: article.tags,
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: 'article',
       publishedTime: article.publishedAt,
       authors: [article.author],
+      url: `${baseUrl}/${article.category}/${article.slug}`,
       images: [
         {
           url: article.coverImage,
@@ -45,7 +51,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       images: [article.coverImage],
     },
     alternates: {
-      canonical: `https://thestandardjapan.com/${article.category}/${article.slug}`,
+      canonical: `${baseUrl}/${article.category}/${article.slug}`,
     },
   }
 }
@@ -55,6 +61,9 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   if (!article) notFound()
 
   const relatedArticles = getRelatedArticles(params.slug, article.category)
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
+  const articleUrl = `${baseUrl}/${article.category}/${article.slug}`
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
@@ -73,14 +82,30 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       name: 'The Standard Japan',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://thestandardjapan.com/logo.png',
+        url: `${baseUrl}/thestandardlogo.png`,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://thestandardjapan.com/${article.category}/${article.slug}`,
+      '@id': articleUrl,
     },
-    keywords: article.tags.join(', '),
+    keywords: article.tags?.join(', ') || '',
+    url: articleUrl,
+    articleSection: article.category,
+    wordCount: article.content.split(/\s+/).length,
+  }
+
+  const faq = extractFaqFromContent(article.content)
+  const faqSchema = getFaqSchema(faq, articleUrl)
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+      { '@type': 'ListItem', position: 2, name: article.category, item: `${baseUrl}/${article.category}` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: articleUrl },
+    ],
   }
 
   return (
@@ -89,6 +114,18 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
+      <ReadingProgress />
 
       <article className="pt-[calc(4rem+4.5rem)]">
         {/* Hero */}
@@ -102,12 +139,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <div className="max-w-2xl mx-auto px-4 sm:px-6 pb-12">
             <div className="border-t border-border pt-8 flex flex-wrap gap-2">
               {article.tags.map((tag) => (
-                <span
+                <a
                   key={tag}
-                  className="font-accent text-[10px] tracking-widest text-muted uppercase border border-border px-3 py-1.5 hover:border-accent hover:text-content transition-colors cursor-default"
+                  href={`/search?q=${encodeURIComponent(tag)}`}
+                  className="font-accent text-[10px] tracking-widest text-muted uppercase border border-border px-3 py-1.5 hover:border-accent hover:text-content transition-colors"
                 >
                   {tag}
-                </span>
+                </a>
               ))}
             </div>
           </div>

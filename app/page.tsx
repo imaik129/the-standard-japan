@@ -4,6 +4,8 @@ import FeaturedGrid from '@/components/home/FeaturedGrid'
 import LatestArticles from '@/components/home/LatestArticles'
 import NewsletterBanner from '@/components/home/NewsletterBanner'
 import CategoryStrip from '@/components/home/CategoryStrip'
+import CategoryTicker from '@/components/home/CategoryTicker'
+import PopularGuides from '@/components/home/PopularGuides'
 
 export default function HomePage() {
   const allArticles = getAllArticles()
@@ -15,16 +17,20 @@ export default function HomePage() {
   const foodArticles = getArticlesByCategory('food')
   const cultureArticles = getArticlesByCategory('culture')
   const fashionArticles = getArticlesByCategory('fashion')
+  const guideArticles = getArticlesByCategory('guide')
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'The Standard Japan',
-    url: 'https://thestandardjapan.com',
-    description: "Tokyo's Underground, Unfiltered.",
+    alternateName: 'Japan Guide by The Standard',
+    url: baseUrl,
+    description: 'The definitive guide to Japan. Culture, food, fashion, art, nightlife — the real Tokyo.',
+    inLanguage: 'en-US',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://thestandardjapan.com/search?q={search_term_string}',
+      target: { '@type': 'EntryPoint', urlTemplate: `${baseUrl}/search?q={search_term_string}` },
       'query-input': 'required name=search_term_string',
     },
   }
@@ -42,19 +48,13 @@ export default function HomePage() {
       </div>
 
       {/* Ticker */}
-      <div className="bg-accent text-white overflow-hidden py-2 border-y border-red-700">
-        <div className="ticker-animate flex gap-8 whitespace-nowrap">
-          {['Culture', 'Food & Drink', 'Travel', 'Fashion', 'Art & Design', 'Music & Nightlife', 'Living', 'Tokyo Guide',
-            'Culture', 'Food & Drink', 'Travel', 'Fashion', 'Art & Design', 'Music & Nightlife', 'Living', 'Tokyo Guide'].map((cat, i) => (
-            <span key={i} className="font-accent text-xs tracking-[0.2em] uppercase">
-              {cat} <span className="mx-2 opacity-50">·</span>
-            </span>
-          ))}
-        </div>
-      </div>
+      <CategoryTicker />
 
       {/* Featured Grid */}
       <FeaturedGrid articles={featuredGrid} />
+
+      {/* Popular / Essential Japan Guides */}
+      <PopularGuides articles={featuredArticles.length > 0 ? featuredArticles : allArticles.slice(0, 4)} />
 
       {/* Category strips */}
       <div className="border-y border-border/50 bg-surface/30">
@@ -80,6 +80,13 @@ export default function HomePage() {
       {fashionArticles.length > 0 && (
         <div className="border-t border-border bg-surface/20">
           <CategoryStrip title="Fashion" slug="fashion" articles={fashionArticles} />
+        </div>
+      )}
+
+      {/* Tokyo Guide Strip */}
+      {guideArticles.length > 0 && (
+        <div className="border-t border-border">
+          <CategoryStrip title="Tokyo Guide" slug="guide" articles={guideArticles} />
         </div>
       )}
     </>
