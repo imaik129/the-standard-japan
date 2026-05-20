@@ -104,9 +104,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/thestandardlogo.png" type="image/png" />
         <link rel="alternate" type="application/rss+xml" title="The Standard Japan RSS" href="/feed" />
-        {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
-          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} />
-        )}
+        <meta name="google-site-verification" content="Zkq067MR7uMRFG3wm0M9lVAhnRdYufD-ZiI2XPW-SqA" />
       </head>
       <body className="bg-background text-content antialiased">
         <a

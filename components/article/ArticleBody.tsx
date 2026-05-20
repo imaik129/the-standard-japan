@@ -46,6 +46,26 @@ const components = {
       {...props}
     />
   ),
+  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
+    <div className="overflow-x-auto my-8">
+      <table className="w-full border-collapse border border-border" {...props} />
+    </div>
+  ),
+  thead: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <thead className="bg-surface-elevated" {...props} />
+  ),
+  tbody: (props: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <tbody {...props} />
+  ),
+  tr: (props: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <tr className="border-b border-border hover:bg-surface-elevated/50 transition-colors" {...props} />
+  ),
+  th: (props: React.ThHTMLAttributes<HTMLTableCellElement>) => (
+    <th className="text-left font-display font-bold text-content px-4 py-3 border border-border" {...props} />
+  ),
+  td: (props: React.TdHTMLAttributes<HTMLTableCellElement>) => (
+    <td className="font-body text-[1.05rem] text-gray-200 px-4 py-3 border border-border" {...props} />
+  ),
 }
 
 interface ArticleBodyProps {
