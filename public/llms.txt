@@ -90,6 +90,12 @@ Published education guides (2026) — English and Japanese (/ja/education/...):
 - international-school-vs-japanese-school
 - english-preschool-vs-english-conversation-school
 - how-to-choose-international-school-japan
+- kobe-affluent-families-education (神戸 富裕層 教育)
+- ashiya-nishinomiya-international-education (芦屋・西宮)
+- bilingual-education-kobe-children
+- international-school-tuition-japan-2026
+- returnee-children-schools-kansai (帰国子女)
+- english-preschool-kobe-professional-parents (共働き・AI検索向け)
 
 Format: Short answer block at top, FAQ with schema, comparison tables, neutral editorial tone.
 

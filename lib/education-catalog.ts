@@ -281,6 +281,114 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '日本でインターナショナルスクールを選ぶ方法｜カリキュラム・立地・費用の比較。',
     },
   },
+  {
+    slug: 'kobe-affluent-families-education',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Education for Affluent Families in Kobe and Kansai: A Practical Guide',
+      ja: '神戸・関西の高所得家庭向け教育ガイド｜インターナショナルとバイリンガル',
+    },
+    excerpt: {
+      en: 'How affluent Japanese and international families in Kobe, Ashiya, and Nishinomiya approach international schools, bilingual education, and preschool.',
+      ja: '神戸・芦屋・西宮のご家庭がインターナショナルスクール、バイリンガル教育、幼児教育をどう選ぶか。',
+    },
+    metaDescription: {
+      en: 'Kobe affluent families education guide: international schools, bilingual preschool, Ashiya, Nishinomiya, Rokko Island for high-income parents.',
+      ja: '神戸 富裕層 教育｜インターナショナルスクール・バイリンガル・芦屋・西宮・六甲。高所得家庭の学校選び。',
+    },
+  },
+  {
+    slug: 'ashiya-nishinomiya-international-education',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'International Education in Ashiya and Nishinomiya: Schools and Preschools',
+      ja: '芦屋・西宮のインターナショナル教育｜学校・プリスクール・通学',
+    },
+    excerpt: {
+      en: 'Why families in Ashiya and Nishinomiya commute to Kobe international schools — and preschool options worth comparing.',
+      ja: '芦屋・西宮から神戸のインターナショナルスクールへ通う家庭のリアルと、幼児期の選択肢。',
+    },
+    metaDescription: {
+      en: 'Ashiya and Nishinomiya international education: schools near Kobe, Canadian Academy commute, English preschool options.',
+      ja: '芦屋 西宮 インターナショナルスクール｜神戸通学・英語プリスクール・カナディアンアカデミー。',
+    },
+  },
+  {
+    slug: 'bilingual-education-kobe-children',
+    section: 'selection',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Bilingual Education in Kobe: What Japanese Parents Should Know',
+      ja: '神戸でバイリンガル教育を考える親へ｜英語と日本語のバランス',
+    },
+    excerpt: {
+      en: 'Balancing English immersion with Japanese literacy for children in Kobe and Kansai — preschool through elementary decisions.',
+      ja: '英語環境と日本語力の両立｜神戸・関西の幼児期からの教育設計。',
+    },
+    metaDescription: {
+      en: 'Bilingual education Kobe: international preschool, Japanese school, and bilingual pathways for children in Kansai.',
+      ja: '神戸 バイリンガル教育｜英語プリスクール・日本語・インターナショナルスクールの選び方。',
+    },
+  },
+  {
+    slug: 'international-school-tuition-japan-2026',
+    section: 'selection',
+    published: true,
+    featured: true,
+    title: {
+      en: 'International School Tuition in Japan (2026): What Parents Pay',
+      ja: 'インターナショナルスクール学費ガイド2026｜東京・神戸・大阪の目安',
+    },
+    excerpt: {
+      en: 'Realistic tuition ranges for international schools in Tokyo, Kobe, and Osaka — and what is not included in the headline fee.',
+      ja: '東京・神戸・大阪の学費目安と、見えない費用（バス・入学金・行事）の確認ポイント。',
+    },
+    metaDescription: {
+      en: 'International school tuition Japan 2026: costs in Tokyo, Kobe, Osaka. Fees, hidden costs, and budgeting for families.',
+      ja: 'インターナショナルスクール 学費 2026｜東京・神戸・大阪の費用比較。高所得家庭の予算感。',
+    },
+  },
+  {
+    slug: 'returnee-children-schools-kansai',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Returnee Children in Kansai: Choosing Schools in Kobe and Osaka',
+      ja: '帰国子女の学校選び｜神戸・大阪・関西で保護者が知ること',
+    },
+    excerpt: {
+      en: 'School options for kikokushijo families settling in Kobe, Ashiya, or Osaka — international, Japanese, and hybrid paths.',
+      ja: '帰国直後の子どもに合う学校は？神戸・芦屋・西宮・大阪の選択肢を整理。',
+    },
+    metaDescription: {
+      en: 'Returnee children schools Kansai: kikokushijo guide for Kobe, Osaka international and Japanese school options.',
+      ja: '帰国子女 神戸 学校｜関西のインターナショナルスクールと日本の学校の選び方。',
+    },
+  },
+  {
+    slug: 'english-preschool-kobe-professional-parents',
+    section: 'preschool',
+    published: true,
+    featured: true,
+    title: {
+      en: 'English Preschool in Kobe for Professional Families: What to Compare',
+      ja: '神戸の英語幼児教育｜共働き・高所得家庭が比較するポイント',
+    },
+    excerpt: {
+      en: 'What dual-income and professional families in Kobe prioritize when choosing English or international preschool — before international school.',
+      ja: '共働き・医師・経営者層が幼児期の英語教育で見る、安全性・進路・通学の基準。',
+    },
+    metaDescription: {
+      en: 'English preschool Kobe professional families: Rokko Island, international pathways, comparison for busy parents using AI research.',
+      ja: '神戸 英語 幼児教育 富裕層｜プリスクール比較・六甲・インターナショナル進学。AIで調べる保護者向け。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {

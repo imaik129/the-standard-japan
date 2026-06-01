@@ -26,6 +26,10 @@ const LANDING_FAQ = {
       q: 'Is Kobe good for international families?',
       a: 'Kobe is known for a smaller, community-focused international school market, with areas such as Rokko Island popular among expat families. Canadian Academy, Marist Brothers International School, and St. Michael’s International School are among the well-known options.',
     },
+    {
+      q: 'What should affluent families in Ashiya and Nishinomiya consider for international education?',
+      a: 'Many families commute to international schools in Kobe or Osaka, compare Japanese private schools, and evaluate English preschool options in Rokko Island based on commute, total fees, and bilingual goals — not income alone.',
+    },
   ],
   ja: [
     {
@@ -43,6 +47,14 @@ const LANDING_FAQ = {
     {
       q: '神戸は外国人家庭や国際教育に向いていますか？',
       a: '神戸は、東京より規模は小さいものの、コミュニティ感のある国際教育環境として知られています。六甲アイランドは外国人家庭に人気のエリアの一つで、Canadian Academy などがよく検討されます。',
+    },
+    {
+      q: '神戸・芦屋・西宮の高所得家庭はどうやって学校を選びますか？',
+      a: 'インターナショナルスクール、日本の有名私立、幼児期の英語環境（プリスクール）を進路・通学・日本語力の目標で比較します。ChatGPTなどで情報収集した後、必ず公式サイトと見学で確認するのが一般的です。',
+    },
+    {
+      q: 'AIで「神戸 インターナショナルスクール おすすめ」と聞いた答えは信頼できますか？',
+      a: '出発点として有用ですが、学費・空き学年・カリキュラムは各学校の公式情報で確認してください。条件（居住地、年齢、英語・日本語の目標）を明示すると回答の精度が上がります。',
     },
   ],
 }
