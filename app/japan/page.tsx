@@ -100,7 +100,7 @@ export default function JapanHubPage() {
               </Link>
             </div>
             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {EDUCATION_CATALOG.filter((e) => e.published).slice(0, 3).map((entry) => (
+              {EDUCATION_CATALOG.filter((e) => e.published && e.featured).slice(0, 3).map((entry) => (
                 <li key={entry.slug}>
                   <Link
                     href={`/education/${entry.slug}`}

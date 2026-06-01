@@ -68,8 +68,8 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'best-international-schools-japan',
     section: 'international-schools',
-    published: false,
-    featured: false,
+    published: true,
+    featured: true,
     title: {
       en: "Best International Schools in Japan: A Parent's Guide",
       ja: '日本のおすすめインターナショナルスクール｜保護者向けガイド',
@@ -86,7 +86,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'best-international-schools-tokyo',
     section: 'international-schools',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: "Best International Schools in Tokyo: A Parent's Guide",
@@ -122,7 +122,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'best-international-schools-osaka',
     section: 'international-schools',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: "Best International Schools in Osaka: A Parent's Guide",
@@ -158,7 +158,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'best-preschools-kobe',
     section: 'preschool',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: 'Best Preschools in Kobe: International, Bilingual, and Local Options',
@@ -194,8 +194,8 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'moving-to-kobe-international-schools',
     section: 'moving',
-    published: false,
-    featured: false,
+    published: true,
+    featured: true,
     title: {
       en: 'Moving to Kobe with Children: International School and Preschool Guide',
       ja: '子連れで神戸に引っ越す家庭向けインターナショナル教育ガイド',
@@ -212,7 +212,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'rokko-island-family-guide',
     section: 'city-guides',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: 'Rokko Island Family Guide: Schools, Preschools, and Living',
@@ -230,7 +230,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'international-school-vs-japanese-school',
     section: 'selection',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: 'International School vs Japanese School in Japan',
@@ -248,7 +248,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'english-preschool-vs-english-conversation-school',
     section: 'preschool',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: 'English Preschool vs English Conversation School',
@@ -266,7 +266,7 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
   {
     slug: 'how-to-choose-international-school-japan',
     section: 'selection',
-    published: false,
+    published: true,
     featured: false,
     title: {
       en: 'How to Choose an International School in Japan',

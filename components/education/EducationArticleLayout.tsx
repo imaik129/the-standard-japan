@@ -127,7 +127,7 @@ export default function EducationArticleLayout({
           <div className="relative w-full aspect-[21/9] max-h-[400px] rounded-lg overflow-hidden mb-12 border border-edu-border">
             <Image
               src={article.coverImage}
-              alt=""
+              alt={article.title}
               fill
               className="object-cover"
               priority

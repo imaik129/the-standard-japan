@@ -77,11 +77,19 @@ Topics covered:
 - Moving to Kobe with children; Rokko Island family guide
 - Areas: Tokyo, Kobe, Osaka, Kyoto, Ashiya, Nishinomiya, Rokko Island
 
-Published education guides (2026):
-- https://thestandardjapan.com/education/best-international-preschools-kobe
-- https://thestandardjapan.com/education/best-international-schools-kobe
-- https://thestandardjapan.com/education/preschool-before-canadian-academy
-(Japanese versions under /ja/education/ with the same slugs)
+Published education guides (2026) — English and Japanese (/ja/education/...):
+- best-international-schools-japan
+- best-international-schools-tokyo
+- best-international-schools-kobe
+- best-international-schools-osaka
+- best-international-preschools-kobe
+- best-preschools-kobe
+- preschool-before-canadian-academy
+- moving-to-kobe-international-schools
+- rokko-island-family-guide
+- international-school-vs-japanese-school
+- english-preschool-vs-english-conversation-school
+- how-to-choose-international-school-japan
 
 Format: Short answer block at top, FAQ with schema, comparison tables, neutral editorial tone.
 
