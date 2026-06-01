@@ -47,6 +47,39 @@ export default function EducationTableOfContents({
 
   const label = locale === 'ja' ? '目次' : 'In this guide'
 
+  if (locale === 'ja') {
+    return (
+      <nav
+        className="sticky top-32 self-start bg-white border border-edu-ja-border rounded-lg p-4 shadow-sm"
+        aria-label="目次"
+      >
+        <p className="text-sm font-bold text-edu-ja-accent mb-3 pb-2 border-b border-edu-ja-border">
+          {label}
+        </p>
+        <ol className="space-y-1 list-decimal list-inside text-sm">
+          {headings.map(({ text, id, level }) => (
+            <li
+              key={id}
+              className={level === 3 ? 'ml-3 list-none' : ''}
+              style={level === 3 ? { listStyle: 'none' } : undefined}
+            >
+              <a
+                href={`#${id}`}
+                className={`block py-1.5 leading-snug transition-colors ${
+                  activeId === id
+                    ? 'text-edu-ja-accent font-bold'
+                    : 'text-edu-ja-muted hover:text-edu-content'
+                }`}
+              >
+                {text}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+
   return (
     <nav className="sticky top-32 self-start" aria-label="Table of contents">
       <p className="font-accent text-[10px] tracking-widest text-edu-muted uppercase mb-4">

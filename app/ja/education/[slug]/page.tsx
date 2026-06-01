@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getEducationArticle, getPublishedSlugs } from '@/lib/education'
+import { getEducationPageMetadataExtras } from '@/lib/education-aeo'
 import EducationArticleLayout from '@/components/education/EducationArticleLayout'
 
 interface PageProps {
@@ -18,6 +19,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
   const url = `${baseUrl}/ja/education/${params.slug}`
 
+  const extras = getEducationPageMetadataExtras({
+    title: article.title,
+    description: article.metaDescription,
+    url,
+    imageUrl: article.coverImage,
+    locale: 'ja',
+    publishedTime: article.publishedAt,
+    modifiedTime: article.updatedAt,
+  })
+
   return {
     title: article.title,
     description: article.metaDescription,
@@ -29,16 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ja: url,
       },
     },
-    openGraph: {
-      title: article.title,
-      description: article.metaDescription,
-      type: 'article',
-      publishedTime: article.publishedAt,
-      modifiedTime: article.updatedAt,
-      url,
-      locale: 'ja_JP',
-      images: [{ url: article.coverImage, width: 1200, height: 630, alt: article.title }],
-    },
+    ...extras,
   }
 }
 

@@ -1,6 +1,9 @@
 /**
  * Extracts FAQ Q&A pairs from MDX content.
- * Format: ## FAQ followed by **Question?** on one line, answer on following lines until next **
+ * Supports:
+ * - ## FAQ / ## よくある質問
+ * - **Question?** on its own line, answer on following lines
+ * - **Question?** Answer on the same line (common in JA guides)
  */
 const FAQ_HEADING_PATTERN = /## (?:FAQ|よくある質問)\s+([\s\S]*?)(?=\n## |$)/i
 
@@ -9,15 +12,47 @@ export function extractFaqFromContent(content: string): { question: string; answ
   const faqSection = content.match(FAQ_HEADING_PATTERN)
   if (!faqSection) return faq
 
-  const section = faqSection[1]
-  const regex = /\*\*(.+?)\*\*\s*\n([\s\S]*?)(?=\n\*\*|$)/g
-  let match
-  while ((match = regex.exec(section)) !== null) {
-    const question = match[1].trim()
-    const answer = match[2].trim().replace(/\s+/g, ' ')
-    if (question && answer) {
-      faq.push({ question, answer })
+  const section = faqSection[1].trim()
+  const lines = section.split('\n')
+
+  let i = 0
+  while (i < lines.length) {
+    const line = lines[i].trim()
+    if (!line) {
+      i++
+      continue
     }
+
+    const inlineMatch = line.match(/^\*\*(.+?)\*\*\s*(.*)$/)
+    if (inlineMatch) {
+      const question = inlineMatch[1].trim()
+      let answer = inlineMatch[2].trim()
+
+      if (!answer) {
+        const answerParts: string[] = []
+        i++
+        while (i < lines.length) {
+          const next = lines[i].trim()
+          if (!next) {
+            i++
+            continue
+          }
+          if (next.startsWith('**') && next.includes('**')) break
+          answerParts.push(next)
+          i++
+        }
+        answer = answerParts.join(' ').trim()
+      } else {
+        i++
+      }
+
+      if (question && answer) {
+        faq.push({ question, answer })
+      }
+      continue
+    }
+
+    i++
   }
 
   return faq
@@ -29,6 +64,7 @@ export function getFaqSchema(faq: { question: string; answer: string }[], url: s
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${url}#faq`,
     mainEntity: faq.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,

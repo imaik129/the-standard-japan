@@ -15,12 +15,13 @@ export default function LanguageSwitcher({ slug, locale }: LanguageSwitcherProps
   const href = slug ? getEducationPath(slug, other) : getEducationHubPath(other)
   const label = locale === 'en' ? '日本語' : 'English'
 
+  const className =
+    locale === 'ja'
+      ? 'text-xs font-medium text-edu-ja-accent hover:bg-edu-ja-accent-soft border border-edu-ja-border px-3 py-1.5 rounded-md transition-colors'
+      : 'font-accent text-xs tracking-widest text-edu-muted hover:text-edu-accent uppercase border border-edu-border px-3 py-1.5 rounded transition-colors'
+
   return (
-    <Link
-      href={href}
-      hrefLang={other}
-      className="font-accent text-xs tracking-widest text-edu-muted hover:text-edu-accent uppercase border border-edu-border px-3 py-1.5 rounded transition-colors"
-    >
+    <Link href={href} hrefLang={other} className={className}>
       {label}
     </Link>
   )

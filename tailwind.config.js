@@ -26,11 +26,22 @@ module.exports = {
           border: '#E5E4DF',
           accent: '#8B2942',
         },
+        'edu-ja': {
+          background: '#F8FAFC',
+          surface: '#FFFFFF',
+          highlight: '#FFF9E8',
+          'highlight-border': '#E8D48A',
+          accent: '#1E5A8C',
+          'accent-soft': '#E8F4FC',
+          border: '#D4E4F0',
+          muted: '#4A5568',
+        },
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'Georgia', 'serif'],
         body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         accent: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        ja: ['var(--font-noto-sans-jp)', 'Hiragino Sans', 'Yu Gothic UI', 'sans-serif'],
       },
       typography: (theme) => ({
         DEFAULT: {

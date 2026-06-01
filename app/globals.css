@@ -110,3 +110,87 @@ body {
     padding-top: 0 !important;
   }
 }
+
+/* Japanese education section — comparison-site style */
+.education-ja {
+  font-family: var(--font-noto-sans-jp), 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  background-color: #f8fafc;
+}
+
+.education-ja h1,
+.education-ja h2,
+.education-ja h3,
+.education-ja .font-display {
+  font-family: var(--font-noto-sans-jp), 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.education-ja .edu-ja-section-title {
+  border-left: 4px solid #1e5a8c;
+  padding-left: 0.875rem;
+  line-height: 1.4;
+}
+
+.education-ja .education-prose h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0.875rem;
+  border-left: 4px solid #1e5a8c;
+  scroll-margin-top: 7rem;
+}
+
+.education-ja .education-prose h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 1px solid #d4e4f0;
+  scroll-margin-top: 7rem;
+}
+
+.education-ja .education-prose p {
+  font-size: 1rem;
+  line-height: 1.95;
+  color: #4a5568;
+}
+
+.education-ja .education-prose a {
+  color: #1e5a8c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.education-ja .education-prose table {
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(30, 90, 140, 0.08);
+}
+
+.education-ja .education-prose thead {
+  background: #e8f4fc;
+}
+
+.education-ja .education-prose tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.education-ja .education-prose th {
+  color: #1e5a8c;
+  font-weight: 700;
+}
+
+.education-ja .education-prose blockquote {
+  background: #fff9e8;
+  border-left-color: #e8d48a;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.education-ja ::-webkit-scrollbar-thumb {
+  background: #b8cfe0;
+}

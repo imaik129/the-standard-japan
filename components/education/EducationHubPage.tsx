@@ -1,13 +1,20 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   EDUCATION_CATALOG,
   EDUCATION_SECTIONS,
   type EducationLocale,
 } from '@/lib/education-catalog'
 import { getAllEducationArticles, getEducationPath } from '@/lib/education'
+import { EDUCATION_HUB_HERO } from '@/lib/education-images'
 import EducationCard from './EducationCard'
 import LanguageSwitcher from './LanguageSwitcher'
+import EducationJaFaq from './EducationJaFaq'
+import EducationJaSectionTitle from './EducationJaSectionTitle'
+import ShortAnswerBlock from './ShortAnswerBlock'
 import { getKobeHubPath } from '@/lib/education-kobe-hub'
+import { getEducationHubSchemaGraph } from '@/lib/education-aeo'
+import { EDUCATION_HUB_SHORT_ANSWER } from '@/lib/education-hub-aeo'
 
 const LANDING_FAQ = {
   en: [
@@ -105,78 +112,117 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
     },
   }[locale]
 
-  const hubSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: copy.title,
-    description: copy.hero,
+  const hubSchemaGraph = getEducationHubSchemaGraph({
+    locale,
+    baseUrl,
+    title: copy.title,
+    description: EDUCATION_HUB_SHORT_ANSWER[locale],
     url: hubUrl,
-    inLanguage: locale === 'ja' ? 'ja' : 'en',
-    publisher: {
-      '@type': 'Organization',
-      name: 'The Standard Japan',
-      url: baseUrl,
-    },
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: publishedArticles.length,
-      itemListElement: publishedArticles.map((article, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: {
-          '@type': 'Article',
-          name: article.title,
-          url: `${baseUrl}${getEducationPath(article.slug, locale)}`,
-          description: article.excerpt,
-        },
-      })),
-    },
-  }
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: LANDING_FAQ[locale].map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
+    articles: publishedArticles.map((article) => ({
+      title: article.title,
+      url: `${baseUrl}${getEducationPath(article.slug, locale)}`,
+      description: article.metaDescription || article.excerpt,
+      dateModified: article.updatedAt,
     })),
-  }
+    faq: LANDING_FAQ[locale].map(({ q, a }) => ({ question: q, answer: a })),
+  })
+
+  const isJa = locale === 'ja'
+  const heroSrc = EDUCATION_HUB_HERO.education[locale]
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(hubSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hubSchemaGraph) }}
       />
 
-      <div className="bg-edu-background min-h-screen pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`min-h-screen pt-32 pb-20 ${isJa ? '' : 'bg-edu-background'}`}>
+        <div className={`mx-auto px-4 sm:px-6 lg:px-8 ${isJa ? 'max-w-6xl' : 'max-w-7xl'}`}>
           <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-            <p className="font-accent text-[10px] tracking-widest text-edu-accent uppercase">
-              {copy.eyebrow}
-            </p>
+            {isJa ? (
+              <span className="text-xs font-medium text-edu-ja-accent bg-edu-ja-accent-soft px-3 py-1 rounded-full">
+                {copy.eyebrow}
+              </span>
+            ) : (
+              <p className="font-accent text-[10px] tracking-widest text-edu-accent uppercase">
+                {copy.eyebrow}
+              </p>
+            )}
             <LanguageSwitcher locale={locale} />
           </div>
 
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-edu-content max-w-4xl leading-tight mb-4">
+          <h1
+            className={`font-bold text-edu-content max-w-4xl leading-tight mb-4 ${
+              isJa ? 'text-3xl md:text-4xl' : 'font-display text-4xl md:text-5xl lg:text-6xl'
+            }`}
+          >
             {copy.title}
           </h1>
-          <p className="font-display text-xl md:text-2xl text-edu-muted mb-6">{copy.subtitle}</p>
-          <p className="font-body text-lg text-edu-muted max-w-3xl leading-relaxed mb-12">
+          <p
+            className={`mb-6 ${isJa ? 'text-lg text-edu-ja-accent font-bold' : 'font-display text-xl md:text-2xl text-edu-muted'}`}
+          >
+            {copy.subtitle}
+          </p>
+          <p
+            className={`max-w-3xl leading-relaxed mb-6 ${isJa ? 'text-base text-edu-ja-muted' : 'font-body text-lg text-edu-muted'}`}
+          >
             {copy.hero}
           </p>
+
+          <div id="hub-short-answer" className="max-w-3xl mb-8">
+            <ShortAnswerBlock
+              text={EDUCATION_HUB_SHORT_ANSWER[locale]}
+              label={locale === 'ja' ? 'このページの要点' : 'Quick answer'}
+              locale={locale}
+            />
+          </div>
+
+          {isJa && (
+            <div className="relative w-full rounded-xl overflow-hidden border border-edu-ja-border shadow-sm mb-10">
+              <div className="relative aspect-[2.5/1] max-h-[360px]">
+                <Image
+                  src={heroSrc}
+                  alt="日本のインターナショナル教育"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-edu-ja-accent/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6 md:p-8 max-w-lg">
+                  <p className="text-white text-sm md:text-base font-medium leading-relaxed drop-shadow">
+                    神戸・関西・東京 — 保護者目線で学校・プリスクールを比較
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {isJa && (
+            <nav className="flex flex-wrap gap-2 mb-12" aria-label="カテゴリ">
+              {EDUCATION_SECTIONS.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#section-${section.id}`}
+                  className="text-sm font-medium text-edu-ja-accent bg-white border border-edu-ja-border px-3 py-2 rounded-full hover:bg-edu-ja-accent-soft transition-colors"
+                >
+                  {section.title.ja}
+                </a>
+              ))}
+            </nav>
+          )}
 
           {/* Featured */}
           {featured.length > 0 && (
             <section className="mb-16">
-              <h2 className="font-display text-2xl font-bold text-edu-content mb-6 border-b border-edu-border pb-4">
-                {copy.featuredTitle}
-              </h2>
+              {isJa ? (
+                <EducationJaSectionTitle>{copy.featuredTitle}</EducationJaSectionTitle>
+              ) : (
+                <h2 className="font-display text-2xl font-bold text-edu-content mb-6 border-b border-edu-border pb-4">
+                  {copy.featuredTitle}
+                </h2>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {featured.map((entry) => (
                   <EducationCard key={entry.slug} entry={entry} locale={locale} />
@@ -191,11 +237,19 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
             if (entries.length === 0) return null
 
             return (
-              <section key={section.id} className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-edu-content mb-2">
-                  {section.title[locale]}
-                </h2>
-                <p className="font-body text-edu-muted mb-6 max-w-2xl">
+              <section key={section.id} id={`section-${section.id}`} className="mb-16 scroll-mt-32">
+                {isJa ? (
+                  <EducationJaSectionTitle as="h2" className="mb-2">
+                    {section.title[locale]}
+                  </EducationJaSectionTitle>
+                ) : (
+                  <h2 className="font-display text-2xl font-bold text-edu-content mb-2">
+                    {section.title[locale]}
+                  </h2>
+                )}
+                <p
+                  className={`mb-6 max-w-2xl ${isJa ? 'text-sm text-edu-ja-muted leading-relaxed' : 'font-body text-edu-muted'}`}
+                >
                   {section.description[locale]}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -208,49 +262,108 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
           })}
 
           {/* Kobe hub */}
-          <section className="mb-16 bg-edu-surface border-2 border-edu-accent/20 rounded-lg p-8 md:p-10">
-            <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
-              {copy.kobeHubTitle}
-            </h2>
-            <p className="font-body text-edu-muted mb-6 max-w-2xl">{copy.kobeHubText}</p>
-            <Link
-              href={getKobeHubPath(locale)}
-              className="inline-flex font-accent text-xs tracking-widest uppercase bg-edu-accent text-white px-6 py-3 hover:opacity-90 transition-opacity"
-            >
-              {locale === 'ja' ? '神戸・関西ガイド一覧 →' : 'View Kobe & Kansai guides →'}
-            </Link>
+          <section
+            className={`mb-16 rounded-xl overflow-hidden ${
+              isJa
+                ? 'border border-edu-ja-border shadow-sm'
+                : 'bg-edu-surface border-2 border-edu-accent/20 p-8 md:p-10'
+            }`}
+          >
+            {isJa && (
+              <div className="relative aspect-[3/1] max-h-[200px]">
+                <Image
+                  src={EDUCATION_HUB_HERO.kobe.ja}
+                  alt="神戸・六甲"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 1152px"
+                />
+              </div>
+            )}
+            <div className={isJa ? 'p-6 md:p-8 bg-white' : ''}>
+              {isJa ? (
+                <EducationJaSectionTitle className="mb-3">{copy.kobeHubTitle}</EducationJaSectionTitle>
+              ) : (
+                <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
+                  {copy.kobeHubTitle}
+                </h2>
+              )}
+              <p
+                className={`mb-6 max-w-2xl ${isJa ? 'text-sm text-edu-ja-muted leading-relaxed' : 'font-body text-edu-muted'}`}
+              >
+                {copy.kobeHubText}
+              </p>
+              <Link
+                href={getKobeHubPath(locale)}
+                className={
+                  isJa
+                    ? 'inline-flex text-sm font-bold text-white bg-edu-ja-accent px-6 py-3 rounded-lg hover:opacity-90 transition-opacity'
+                    : 'inline-flex font-accent text-xs tracking-widest uppercase bg-edu-accent text-white px-6 py-3 hover:opacity-90 transition-opacity'
+                }
+              >
+                {locale === 'ja' ? '神戸・関西ガイド一覧 →' : 'View Kobe & Kansai guides →'}
+              </Link>
+            </div>
           </section>
 
           {/* CTA */}
-          <section className="mb-16 bg-edu-surface border border-edu-border rounded-lg p-8 md:p-10">
-            <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
-              {copy.ctaTitle}
-            </h2>
-            <p className="font-body text-edu-muted mb-6 max-w-2xl">{copy.ctaText}</p>
+          <section
+            className={`mb-16 rounded-lg p-8 md:p-10 ${
+              isJa
+                ? 'bg-edu-ja-highlight border border-edu-ja-highlight-border'
+                : 'bg-edu-surface border border-edu-border'
+            }`}
+          >
+            {isJa ? (
+              <EducationJaSectionTitle className="mb-3">{copy.ctaTitle}</EducationJaSectionTitle>
+            ) : (
+              <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
+                {copy.ctaTitle}
+              </h2>
+            )}
+            <p
+              className={`mb-6 max-w-2xl ${isJa ? 'text-sm text-edu-ja-muted leading-relaxed' : 'font-body text-edu-muted'}`}
+            >
+              {copy.ctaText}
+            </p>
             <Link
               href={copy.ctaHref}
-              className="inline-flex font-accent text-xs tracking-widest uppercase text-edu-accent border border-edu-accent px-6 py-3 hover:bg-edu-accent hover:text-white transition-colors"
+              className={
+                isJa
+                  ? 'inline-flex text-sm font-medium text-edu-ja-accent border-2 border-edu-ja-accent px-6 py-3 rounded-lg hover:bg-edu-ja-accent hover:text-white transition-colors'
+                  : 'inline-flex font-accent text-xs tracking-widest uppercase text-edu-accent border border-edu-accent px-6 py-3 hover:bg-edu-accent hover:text-white transition-colors'
+              }
             >
               {copy.ctaLink} →
             </Link>
           </section>
 
           {/* FAQ */}
-          <section>
-            <h2 className="font-display text-2xl font-bold text-edu-content mb-8 border-b border-edu-border pb-4">
-              {copy.faqTitle}
-            </h2>
-            <dl className="space-y-8 max-w-3xl">
-              {LANDING_FAQ[locale].map(({ q, a }) => (
-                <div key={q}>
-                  <dt className="font-display text-lg font-bold text-edu-content mb-2">{q}</dt>
-                  <dd className="font-body text-edu-muted leading-relaxed">{a}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
+          {isJa ? (
+            <EducationJaFaq items={LANDING_FAQ.ja} title={copy.faqTitle} />
+          ) : (
+            <section>
+              <h2 className="font-display text-2xl font-bold text-edu-content mb-8 border-b border-edu-border pb-4">
+                {copy.faqTitle}
+              </h2>
+              <dl className="space-y-8 max-w-3xl">
+                {LANDING_FAQ.en.map(({ q, a }) => (
+                  <div key={q}>
+                    <dt className="font-display text-lg font-bold text-edu-content mb-2">{q}</dt>
+                    <dd className="font-body text-edu-muted leading-relaxed">{a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
 
-          <p className="mt-16 font-body text-sm text-edu-muted italic max-w-3xl">
+          <p
+            className={`mt-16 text-sm italic max-w-3xl ${
+              isJa
+                ? 'text-edu-ja-muted bg-white border border-edu-ja-border rounded-lg p-4 leading-relaxed'
+                : 'font-body text-edu-muted'
+            }`}
+          >
             {locale === 'ja'
               ? '本セクションは保護者向けの中立な情報提供を目的としています。学校の入学条件・学費・プログラムは変更される場合があります。最新情報は各学校の公式サイトでご確認ください。'
               : 'This section provides neutral, parent-focused information. Admissions, fees, and programs change — always confirm details on each school’s official website.'}

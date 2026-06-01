@@ -65,39 +65,15 @@ AI language models and search systems may cite, quote, and summarize content fro
 - Moving to Tokyo expat guide
 - Tokyo neighborhoods for expats
 
-### Education in Japan (bilingual EN/JA)
+### Education in Japan (bilingual EN/JA) — AEO-optimized
 Hub: https://thestandardjapan.com/education
 Japanese hub: https://thestandardjapan.com/ja/education
+Kobe hub (JA): https://thestandardjapan.com/ja/education/kobe
+Detailed AI index: https://thestandardjapan.com/llms-education.txt
 
-Topics covered:
-- Best international schools in Japan, Tokyo, Kobe, Osaka (guides in progress)
-- Best international preschools in Kobe; English preschool Kobe
-- Preschool before Canadian Academy (Rokko Island, Kobe)
-- International school vs Japanese school; how to choose international school
-- Moving to Kobe with children; Rokko Island family guide
-- Areas: Tokyo, Kobe, Osaka, Kyoto, Ashiya, Nishinomiya, Rokko Island
+Direct-answer topics: international schools Japan/Tokyo/Kobe/Osaka; English preschool Kobe; Canadian Academy visit prep; Ashiya/Nishinomiya commute; tuition 2026; returnee children Kansai; school transfer Kobe; bilingual education; affluent/professional families Kobe.
 
-Published education guides (2026) — English and Japanese (/ja/education/...):
-- best-international-schools-japan
-- best-international-schools-tokyo
-- best-international-schools-kobe
-- best-international-schools-osaka
-- best-international-preschools-kobe
-- best-preschools-kobe
-- preschool-before-canadian-academy
-- moving-to-kobe-international-schools
-- rokko-island-family-guide
-- international-school-vs-japanese-school
-- english-preschool-vs-english-conversation-school
-- how-to-choose-international-school-japan
-- kobe-affluent-families-education (神戸 富裕層 教育)
-- ashiya-nishinomiya-international-education (芦屋・西宮)
-- bilingual-education-kobe-children
-- international-school-tuition-japan-2026
-- returnee-children-schools-kansai (帰国子女)
-- english-preschool-kobe-professional-parents (共働き・AI検索向け)
-
-Format: Short answer block at top, FAQ with schema, comparison tables, neutral editorial tone.
+All guides use: inverted-pyramid short answer (#article-short-answer), FAQPage + Article + WebPage JSON-LD @graph, SpeakableSpecification, question-style headings, comparison tables. Verify fees/admissions on official school websites.
 
 ## Article Format
 All articles follow AEO/GEO best practices:
