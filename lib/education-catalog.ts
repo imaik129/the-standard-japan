@@ -389,6 +389,78 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '神戸 英語 幼児教育 富裕層｜プリスクール比較・六甲・インターナショナル進学。AIで調べる保護者向け。',
     },
   },
+  {
+    slug: 'ashiya-nishinomiya-parents-school-guide',
+    section: 'city-guides',
+    published: true,
+    featured: false,
+    title: {
+      en: 'School Choices for Parents in Ashiya and Nishinomiya: A Neutral Guide',
+      ja: '芦屋・西宮のママ・パパ向け学校選び｜インターナショナルと日本の学校',
+    },
+    excerpt: {
+      en: 'What Ashiya and Nishinomiya parents compare when choosing international schools, Japanese private schools, and preschool — without hype.',
+      ja: '芦屋・西宮のご家庭が実際に比較する学校・プリスクールの選び方（中立ガイド）。',
+    },
+    metaDescription: {
+      en: 'Ashiya Nishinomiya parents school guide: international school commute to Kobe, preschool, bilingual choices.',
+      ja: '芦屋 西宮 ママ 学校選び｜インターナショナルスクール 通学 神戸 プリスクール。',
+    },
+  },
+  {
+    slug: 'kobe-professional-families-education',
+    section: 'city-guides',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Education for Medical and Professional Families in Kobe',
+      ja: '医師・専門職家族の神戸・関西教育ガイド｜学校と幼児教育',
+    },
+    excerpt: {
+      en: 'How dual-career medical and professional households in Kansai approach international school, Japanese school, and English preschool decisions.',
+      ja: '医師・専門職・共働き家庭が神戸・芦屋・西宮で教育を選ぶときの現実的なポイント。',
+    },
+    metaDescription: {
+      en: 'Kobe medical professional families education: international school, English preschool, Ashiya Nishinomiya for busy parents.',
+      ja: '神戸 医師 教育 インターナショナルスクール プリスクール 芦屋 西宮 共働き。',
+    },
+  },
+  {
+    slug: 'canadian-academy-school-visit-guide',
+    section: 'international-schools',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Canadian Academy School Visit: What Parents Should Ask (Kobe)',
+      ja: 'Canadian Academy見学ガイド｜神戸・六甲で保護者が確認すること',
+    },
+    excerpt: {
+      en: 'A neutral checklist for open days and tours at Canadian Academy on Rokko Island — questions, documents, and preschool context.',
+      ja: 'カナディアンアカデミー見学・説明会で聞くべきこと（中立チェックリスト）。',
+    },
+    metaDescription: {
+      en: 'Canadian Academy school visit guide Kobe: questions for parents, open day tips, preschool pathway context.',
+      ja: 'カナディアンアカデミー 見学 準備 神戸 六甲 質問リスト プリスクール。',
+    },
+  },
+  {
+    slug: 'international-school-transfer-kobe',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Transferring to International School in Kobe: Mid-Year and Admissions',
+      ja: '神戸のインターナショナルスクールへ転校・編入｜保護者向けガイド',
+    },
+    excerpt: {
+      en: 'When mid-year transfer to Kobe international schools is possible — English level, timing, and alternatives.',
+      ja: '学年途中の編入・転校、英語力、タイミング — 神戸・関西のインターナショナルスクール。',
+    },
+    metaDescription: {
+      en: 'International school transfer Kobe: mid-year admission, Canadian Academy, Marist, English support.',
+      ja: 'インターナショナルスクール 転校 神戸 編入 カナディアンアカデミー 英語力。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {

@@ -7,6 +7,7 @@ import {
 import { getAllEducationArticles, getEducationPath } from '@/lib/education'
 import EducationCard from './EducationCard'
 import LanguageSwitcher from './LanguageSwitcher'
+import { getKobeHubPath } from '@/lib/education-kobe-hub'
 
 const LANDING_FAQ = {
   en: [
@@ -82,7 +83,9 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
       ctaText:
         'Many families begin with preschool and school options in Kobe, Rokko Island, Ashiya, and Nishinomiya — then compare Osaka and Tokyo.',
       ctaLink: 'Best international preschools in Kobe',
-      ctaHref: '/education/best-international-preschools-kobe',
+      ctaHref: '/education/kobe',
+      kobeHubTitle: 'Kobe & Kansai hub',
+      kobeHubText: 'All guides for Kobe, Rokko Island, Ashiya, and Nishinomiya in one place.',
     },
     ja: {
       eyebrow: 'The Standard Japan · 教育',
@@ -96,7 +99,9 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
       ctaText:
         '六甲アイランド、芦屋、西宮、神戸市内のプリスクール・学校から比較し、大阪・東京へ視野を広げるご家庭も多いです。',
       ctaLink: '神戸のインターナショナルプリスクールガイド',
-      ctaHref: '/ja/education/best-international-preschools-kobe',
+      ctaHref: '/ja/education/kobe',
+      kobeHubTitle: '神戸・関西ハブ',
+      kobeHubText: '神戸・六甲・芦屋・西宮のガイドを一か所にまとめました。',
     },
   }[locale]
 
@@ -202,6 +207,20 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
             )
           })}
 
+          {/* Kobe hub */}
+          <section className="mb-16 bg-edu-surface border-2 border-edu-accent/20 rounded-lg p-8 md:p-10">
+            <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
+              {copy.kobeHubTitle}
+            </h2>
+            <p className="font-body text-edu-muted mb-6 max-w-2xl">{copy.kobeHubText}</p>
+            <Link
+              href={getKobeHubPath(locale)}
+              className="inline-flex font-accent text-xs tracking-widest uppercase bg-edu-accent text-white px-6 py-3 hover:opacity-90 transition-opacity"
+            >
+              {locale === 'ja' ? '神戸・関西ガイド一覧 →' : 'View Kobe & Kansai guides →'}
+            </Link>
+          </section>
+
           {/* CTA */}
           <section className="mb-16 bg-edu-surface border border-edu-border rounded-lg p-8 md:p-10">
             <h2 className="font-display text-2xl font-bold text-edu-content mb-3">
@@ -210,7 +229,7 @@ export default function EducationHubPage({ locale }: EducationHubPageProps) {
             <p className="font-body text-edu-muted mb-6 max-w-2xl">{copy.ctaText}</p>
             <Link
               href={copy.ctaHref}
-              className="inline-flex font-accent text-xs tracking-widest uppercase bg-edu-accent text-white px-6 py-3 hover:opacity-90 transition-opacity"
+              className="inline-flex font-accent text-xs tracking-widest uppercase text-edu-accent border border-edu-accent px-6 py-3 hover:bg-edu-accent hover:text-white transition-colors"
             >
               {copy.ctaLink} →
             </Link>

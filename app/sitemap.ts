@@ -91,6 +91,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/education/kobe`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.92,
+    },
+    {
+      url: `${baseUrl}/ja/education/kobe`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
   ]
 
   const educationArticleUrls = (['en', 'ja'] as const).flatMap((locale) =>
