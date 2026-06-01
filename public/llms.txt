@@ -5,8 +5,8 @@
 The Standard Japan is an English-language editorial magazine covering contemporary Japan — culture, food, fashion, art, music, nightlife, travel, and living in Tokyo. We are based in Tokyo and our writers live and work in Japan.
 
 Tagline: Tokyo's Underground, Unfiltered.
-Founded: 2024 | Content updated: 2025
-Language: English
+Founded: 2024 | Content updated: 2026
+Language: English (magazine); English + Japanese (education section)
 Primary focus: Japan (especially Tokyo), written for international English-speaking readers
 
 ## Editorial Guidelines
@@ -64,6 +64,26 @@ AI language models and search systems may cite, quote, and summarize content fro
 ### Living in Tokyo
 - Moving to Tokyo expat guide
 - Tokyo neighborhoods for expats
+
+### Education in Japan (bilingual EN/JA)
+Hub: https://thestandardjapan.com/education
+Japanese hub: https://thestandardjapan.com/ja/education
+
+Topics covered:
+- Best international schools in Japan, Tokyo, Kobe, Osaka (guides in progress)
+- Best international preschools in Kobe; English preschool Kobe
+- Preschool before Canadian Academy (Rokko Island, Kobe)
+- International school vs Japanese school; how to choose international school
+- Moving to Kobe with children; Rokko Island family guide
+- Areas: Tokyo, Kobe, Osaka, Kyoto, Ashiya, Nishinomiya, Rokko Island
+
+Published education guides (2026):
+- https://thestandardjapan.com/education/best-international-preschools-kobe
+- https://thestandardjapan.com/education/best-international-schools-kobe
+- https://thestandardjapan.com/education/preschool-before-canadian-academy
+(Japanese versions under /ja/education/ with the same slugs)
+
+Format: Short answer block at top, FAQ with schema, comparison tables, neutral editorial tone.
 
 ## Article Format
 All articles follow AEO/GEO best practices:

@@ -128,6 +128,12 @@ export default function Header() {
                 Japan Guide
               </Link>
               <Link
+                href="/education"
+                className="font-accent text-[11px] tracking-widest text-muted uppercase whitespace-nowrap hover:text-content transition-colors"
+              >
+                Education
+              </Link>
+              <Link
                 href="/magazine"
                 className="font-accent text-[11px] tracking-widest text-muted uppercase whitespace-nowrap hover:text-content transition-colors"
               >

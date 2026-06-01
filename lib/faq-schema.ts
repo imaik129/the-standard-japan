@@ -2,9 +2,11 @@
  * Extracts FAQ Q&A pairs from MDX content.
  * Format: ## FAQ followed by **Question?** on one line, answer on following lines until next **
  */
+const FAQ_HEADING_PATTERN = /## (?:FAQ|よくある質問)\s+([\s\S]*?)(?=\n## |$)/i
+
 export function extractFaqFromContent(content: string): { question: string; answer: string }[] {
   const faq: { question: string; answer: string }[] = []
-  const faqSection = content.match(/## FAQ\s+([\s\S]*?)(?=\n## |$)/i)
+  const faqSection = content.match(FAQ_HEADING_PATTERN)
   if (!faqSection) return faq
 
   const section = faqSection[1]

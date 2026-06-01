@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllArticles, CATEGORIES } from '@/lib/mdx'
+import { getAllEducationArticles } from '@/lib/education'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
@@ -77,5 +78,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...staticUrls, ...categoryUrls, ...authorUrls, ...articleUrls]
+  const educationHubUrls = [
+    {
+      url: `${baseUrl}/education`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ja/education`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+  ]
+
+  const educationArticleUrls = (['en', 'ja'] as const).flatMap((locale) =>
+    getAllEducationArticles(locale).map((article) => ({
+      url: `${baseUrl}${locale === 'ja' ? '/ja' : ''}/education/${article.slug}`,
+      lastModified: new Date(article.updatedAt || article.publishedAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    }))
+  )
+
+  return [
+    ...staticUrls,
+    ...categoryUrls,
+    ...authorUrls,
+    ...articleUrls,
+    ...educationHubUrls,
+    ...educationArticleUrls,
+  ]
 }

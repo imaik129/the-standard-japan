@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllArticles } from '@/lib/mdx'
 import { CATEGORIES } from '@/lib/categories'
+import { EDUCATION_CATALOG } from '@/lib/education-catalog'
 import ArticleCard from '@/components/article/ArticleCard'
 
 export const metadata: Metadata = {
@@ -75,6 +76,46 @@ export default function JapanHubPage() {
             </p>
           </div>
         </div>
+
+        {/* Education — families & schools */}
+        <section className="border-b border-border bg-surface/40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+              <div>
+                <p className="font-accent text-[10px] tracking-[0.3em] text-accent uppercase mb-3">
+                  New · Education
+                </p>
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-content mb-3">
+                  International Schools & Preschools
+                </h2>
+                <p className="font-body text-muted max-w-xl leading-relaxed">
+                  Bilingual guides for families in Tokyo, Kobe, Osaka, and Kansai — international schools, English preschools, and school selection. English and Japanese.
+                </p>
+              </div>
+              <Link
+                href="/education"
+                className="inline-flex font-accent text-xs tracking-widest uppercase bg-accent text-white px-6 py-3 hover:bg-red-700 transition-colors shrink-0"
+              >
+                Education Guide →
+              </Link>
+            </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {EDUCATION_CATALOG.filter((e) => e.published).slice(0, 3).map((entry) => (
+                <li key={entry.slug}>
+                  <Link
+                    href={`/education/${entry.slug}`}
+                    className="block border border-border bg-surface-elevated p-5 hover:border-accent/50 transition-colors h-full"
+                  >
+                    <p className="font-display text-lg font-bold text-content mb-2 line-clamp-2">
+                      {entry.title.en}
+                    </p>
+                    <p className="font-body text-sm text-muted line-clamp-2">{entry.excerpt.en}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         {/* Popular / Start Here */}
         {popularGuides.length > 0 && (

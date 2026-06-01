@@ -17,6 +17,15 @@ module.exports = {
         accent: '#C8102E',
         muted: '#666666',
         border: '#2A2A2A',
+        edu: {
+          background: '#FAFAF8',
+          surface: '#FFFFFF',
+          'surface-muted': '#F3F2EE',
+          content: '#1A1A1A',
+          muted: '#5C5C58',
+          border: '#E5E4DF',
+          accent: '#8B2942',
+        },
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'Georgia', 'serif'],
