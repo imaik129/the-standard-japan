@@ -25,6 +25,10 @@ export const KOBE_HUB_SLUGS = [
   'international-school-transfer-kobe',
   'ashiya-nishinomiya-parents-school-guide',
   'kobe-professional-families-education',
+  'canadian-academy-admissions-timeline-kobe',
+  'kobe-school-commute-guide-rokko-ashiya-nishinomiya',
+  'kobe-english-preschool-fees-hours-checklist',
+  'after-school-english-kobe-international-families',
 ] as const
 
 export type KobeHubSlug = (typeof KOBE_HUB_SLUGS)[number]

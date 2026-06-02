@@ -461,6 +461,96 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: 'インターナショナルスクール 転校 神戸 編入 カナディアンアカデミー 英語力。',
     },
   },
+  {
+    slug: 'canadian-academy-admissions-timeline-kobe',
+    section: 'selection',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Canadian Academy Admissions Timeline (Kobe): When to Start (2026)',
+      ja: 'Canadian Academyの出願タイムライン｜神戸・六甲アイランド（2026）',
+    },
+    excerpt: {
+      en: 'A parent-friendly planning guide: when to contact admissions, tours, documents, and decision points (always verify with CA).',
+      ja: '入学担当への問い合わせ時期、見学、必要書類、夫婦の意思決定ポイントを整理（最新は公式確認）。',
+    },
+    metaDescription: {
+      en: 'Canadian Academy admissions timeline Kobe: when to apply, tours, documents, waitlists — parent planning guide.',
+      ja: 'カナディアンアカデミー 出願 時期 神戸｜見学・必要書類・タイムラインを保護者向けに整理。',
+    },
+  },
+  {
+    slug: 'international-school-application-checklist-japan',
+    section: 'selection',
+    published: true,
+    featured: false,
+    title: {
+      en: 'International School Application Checklist (Japan) (2026)',
+      ja: 'インターナショナルスクール出願チェックリスト｜日本（2026）',
+    },
+    excerpt: {
+      en: 'AEO-first checklist for families: documents, health forms, language support, and questions to ask admissions.',
+      ja: '必要書類、健康書類、言語サポート、入学担当に確認する質問をチェックリスト化。',
+    },
+    metaDescription: {
+      en: 'International school application checklist Japan: documents, medical forms, EAL, tours and questions for admissions.',
+      ja: 'インターナショナルスクール 出願 チェックリスト 日本｜必要書類・健康書類・質問リスト。',
+    },
+  },
+  {
+    slug: 'kobe-school-commute-guide-rokko-ashiya-nishinomiya',
+    section: 'city-guides',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Kobe School Commute Guide: Rokko Island, Ashiya, Nishinomiya (2026)',
+      ja: '神戸の通学ガイド｜六甲アイランド・芦屋・西宮（2026）',
+    },
+    excerpt: {
+      en: 'How parents sanity-check commutes: bus vs train vs car, rush hour tests, and preschool vs elementary reality.',
+      ja: 'バス・電車・車、ラッシュ実測、プリスクールと小学校で違う「通学の現実」を整理。',
+    },
+    metaDescription: {
+      en: 'Kobe international school commute: Rokko Island, Ashiya, Nishinomiya. How to test routes before deciding.',
+      ja: '神戸 インターナショナルスクール 通学｜六甲アイランド・芦屋・西宮の通学の考え方。',
+    },
+  },
+  {
+    slug: 'kobe-english-preschool-fees-hours-checklist',
+    section: 'preschool',
+    published: true,
+    featured: false,
+    title: {
+      en: 'English Preschool in Kobe: Fees & Hours Checklist (2026)',
+      ja: '神戸の英語プリスクール｜費用・保育時間チェックリスト（2026）',
+    },
+    excerpt: {
+      en: 'What parents should request and compare: fee schedules, extended care, bus, sick policy, and trial lessons.',
+      ja: '月額以外の費用、延長、送迎、病欠ルール、体験の見方をチェックリスト化。',
+    },
+    metaDescription: {
+      en: 'English preschool Kobe fees and hours: checklist for parents comparing programs and total cost.',
+      ja: '神戸 英語プリスクール 費用 保育時間｜総額・延長・送迎のチェックリスト。',
+    },
+  },
+  {
+    slug: 'after-school-english-kobe-international-families',
+    section: 'selection',
+    published: true,
+    featured: false,
+    title: {
+      en: 'After-School English in Kobe: Options for International Families (2026)',
+      ja: '神戸のアフタースクール英語｜インター家庭の選び方（2026）',
+    },
+    excerpt: {
+      en: 'How families mix school, after-school programs, tutors, and Japanese literacy — with a practical decision framework.',
+      ja: '学校＋アフタースクール＋家庭日本語（または補習）の組み合わせ方を実用的に整理。',
+    },
+    metaDescription: {
+      en: 'After-school English Kobe: programs, tutors, balancing Japanese and English for international school families.',
+      ja: '神戸 アフタースクール 英語｜インター家庭の放課後英語と日本語維持の考え方。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {
