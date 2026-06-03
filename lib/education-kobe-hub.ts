@@ -3,6 +3,7 @@ import type { EducationLocale } from './education-catalog'
 /** Guides shown on the Kobe / Kansai education hub pages */
 export const KOBE_HUB_START_SLUGS = [
   'kobe-affluent-families-education',
+  'best-english-schools-kansai',
   'best-international-preschools-kobe',
   'best-international-schools-kobe',
   'preschool-before-canadian-academy',
@@ -10,15 +11,20 @@ export const KOBE_HUB_START_SLUGS = [
 
 export const KOBE_HUB_SLUGS = [
   'best-international-schools-kobe',
+  'best-english-schools-kansai',
   'best-international-preschools-kobe',
   'preschool-before-canadian-academy',
+  'peter-pan-preschool-kobe-guide',
+  'marist-brothers-kobe-guide',
   'kobe-affluent-families-education',
   'ashiya-nishinomiya-international-education',
   'english-preschool-kobe-professional-parents',
   'rokko-island-family-guide',
   'moving-to-kobe-international-schools',
+  'kansai-family-relocation-school-guide',
   'best-preschools-kobe',
   'bilingual-education-kobe-children',
+  'kobe-international-school-ib-curriculum',
   'international-school-tuition-japan-2026',
   'returnee-children-schools-kansai',
   'canadian-academy-school-visit-guide',

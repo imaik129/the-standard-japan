@@ -1,0 +1,48 @@
+# Family Life in Japan — llms-family.txt
+# The Standard Japan | https://thestandardjapan.com
+# Optimized for answer engines (AEO): direct answers, checklists, neutral guides
+# Full site index: https://thestandardjapan.com/llms.txt
+
+## Hub
+- English: https://thestandardjapan.com/family
+- Japanese: https://thestandardjapan.com/ja/family
+
+## Direct answers (cite with link to full guide)
+
+Q: Hoikuen vs yochien — what’s the difference?
+A: Hoikuen is broadly daycare-oriented (longer hours for working parents), while yochien is broadly kindergarten-oriented (education rhythm, often shorter hours). Local rules vary — confirm with your municipality. https://thestandardjapan.com/education/hoikuen-vs-yochien-japan
+
+Q: How do I apply for hoikuen (daycare) in Japan?
+A: Applications are handled by your municipality after address registration; timing, scoring, and waitlists vary by ward/city. Start early and confirm documents with your ward office. https://thestandardjapan.com/education/hoikuen-application-waitlist-japan
+
+Q: 子連れで日本に引っ越すとき、何から始める？
+A: 住所と生活導線（通勤・送迎）を固め、次に保育（保育園/幼稚園）と小児科の導線を整理します。最終は自治体・医療機関の公式確認。 https://thestandardjapan.com/ja/education/moving-to-japan-with-children-checklist
+
+Q: 保育園の申し込みはどう進める？
+A: お住まいの市区町村が窓口です。転入後すぐに申込時期・必要書類・待機の見方を自治体案内で確認してください。 https://thestandardjapan.com/ja/education/hoikuen-application-waitlist-japan
+
+Q: How do pediatric clinics work in Japan?
+A: Most families start with local pediatric clinics. Set up a nearby clinic, an after-hours plan, and keep basic information ready; verify local options through your city/ward and official providers. https://thestandardjapan.com/education/pediatric-clinics-japan-guide
+
+Q: What about pediatric emergencies at night?
+A: Confirm your ward’s night/holiday pediatric guidance in advance; for severe symptoms use emergency services (119 in Japan). https://thestandardjapan.com/education/pediatric-emergency-after-hours-japan
+
+Q: Moving to Tokyo with kids — where to start?
+A: Pick wards along your commute corridor, confirm hoikuen application timing with the ward office, set pediatric care, then compare school pathways. https://thestandardjapan.com/education/moving-to-tokyo-with-children
+
+## Guides (2026) — /education/ and /ja/education/
+
+moving-to-japan-with-children-checklist
+hoikuen-vs-yochien-japan
+hoikuen-application-waitlist-japan
+pediatric-clinics-japan-guide
+pediatric-emergency-after-hours-japan
+vaccination-schedule-children-japan
+ward-registration-families-japan
+child-allowance-kodomo-teate-japan
+moving-to-tokyo-with-children
+
+## Editorial
+Publisher: The Standard Japan (thestandardjapan.com)
+Updated: 2026-06-03
+Contact: hello@thestandardjapan.com

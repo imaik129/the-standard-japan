@@ -551,6 +551,258 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '神戸 アフタースクール 英語｜インター家庭の放課後英語と日本語維持の考え方。',
     },
   },
+  {
+    slug: 'moving-to-japan-with-children-checklist',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Moving to Japan with Children: Practical Checklist (2026)',
+      ja: '子連れで日本へ引っ越すチェックリスト｜手続きと生活（2026）',
+    },
+    excerpt: {
+      en: 'A practical checklist for families relocating to Japan: admin, childcare, healthcare, and school planning.',
+      ja: '転居手続き、保育、医療、学校 — 子連れ引っ越しの段取りをチェックリスト化。',
+    },
+    metaDescription: {
+      en: 'Moving to Japan with kids checklist: admin steps, childcare, pediatric care, and school planning (2026).',
+      ja: '子連れ 日本 引っ越し チェックリスト｜手続き・保育園・小児科・学校（2026）。',
+    },
+  },
+  {
+    slug: 'hoikuen-vs-yochien-japan',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Hoikuen vs Yochien in Japan: Daycare vs Kindergarten (2026)',
+      ja: '保育園と幼稚園の違い｜日本の子育て（2026）',
+    },
+    excerpt: {
+      en: 'A parent-friendly comparison: hours, purpose, costs, and how families choose childcare in Japan.',
+      ja: '目的・保育時間・費用・家庭の条件別に、保育園/幼稚園の違いを整理。',
+    },
+    metaDescription: {
+      en: 'Hoikuen vs yochien: how daycare and kindergarten differ in Japan, for parents moving to Japan (2026).',
+      ja: '保育園 幼稚園 違い｜保育時間・目的・費用をわかりやすく比較（2026）。',
+    },
+  },
+  {
+    slug: 'pediatric-clinics-japan-guide',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Pediatric Clinics in Japan: How Families Use Healthcare (2026)',
+      ja: '日本の小児科のかかり方｜クリニック・救急・予防接種（2026）',
+    },
+    excerpt: {
+      en: 'How pediatric clinics work in Japan: what to bring, after-hours options, and what to verify locally.',
+      ja: '持ち物、受付、夜間/休日、予防接種 — 家族が知っておくと安心な基本。',
+    },
+    metaDescription: {
+      en: 'Pediatric clinics Japan guide: what to bring, after-hours care, vaccines, and family basics (2026).',
+      ja: '日本 小児科 かかり方｜持ち物・夜間休日・予防接種の基本（2026）。',
+    },
+  },
+  {
+    slug: 'hoikuen-application-waitlist-japan',
+    section: 'moving',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Hoikuen Application in Japan: Waitlists and Municipal Process (2026)',
+      ja: '保育園の申し込みと待機｜自治体の流れと準備（2026）',
+    },
+    excerpt: {
+      en: 'How daycare applications work in Japan: timing, municipal steps, documents, and waitlist strategies.',
+      ja: '保育園の申込時期、自治体の手続き、必要書類、待機が長いときの対処。',
+    },
+    metaDescription: {
+      en: 'Hoikuen application Japan 2026: waitlist, municipal daycare signup, documents, and tips for relocating families.',
+      ja: '保育園 申し込み 待機 2026｜自治体手続き・書類・待機リスト（日本）。',
+    },
+  },
+  {
+    slug: 'child-allowance-kodomo-teate-japan',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Child Allowance in Japan (Kodomo Teate): What Families Should Know (2026)',
+      ja: '子ども手当の申請｜家族が知っておく基本（2026）',
+    },
+    excerpt: {
+      en: 'Orientation to Japan’s child allowance: eligibility basics, when to apply, and what to confirm locally.',
+      ja: '子ども手当の概要、申請タイミング、自治体で確認すべきポイント。',
+    },
+    metaDescription: {
+      en: 'Japan child allowance kodomo teate 2026: application steps and what expat families should verify.',
+      ja: '子ども手当 申請 2026｜対象・手続き・自治体確認（日本）。',
+    },
+  },
+  {
+    slug: 'vaccination-schedule-children-japan',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Vaccination Schedule for Children in Japan: Family Guide (2026)',
+      ja: '子どもの予防接種｜日本での進め方と記録（2026）',
+    },
+    excerpt: {
+      en: 'Routine vaccines, boshi techo records, and what to confirm with your pediatric clinic.',
+      ja: '母子手帳、小児科での予約、海外からの接種歴の引き継ぎ。',
+    },
+    metaDescription: {
+      en: 'Japan children vaccination schedule 2026: routine vaccines, records, and clinic planning for families.',
+      ja: '子ども 予防接種 日本 2026｜母子手帳・小児科・自治体の確認ポイント。',
+    },
+  },
+  {
+    slug: 'moving-to-tokyo-with-children',
+    section: 'moving',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Moving to Tokyo with Children: Neighborhoods, Childcare, and Schools (2026)',
+      ja: '子連れで東京に引っ越す｜エリア・保育・学校の進め方（2026）',
+    },
+    excerpt: {
+      en: 'Tokyo relocation for families: ward-based childcare, healthcare setup, and school pathways.',
+      ja: '東京移住の実務：区の保育、医療、インター/日本の学校の順番。',
+    },
+    metaDescription: {
+      en: 'Moving to Tokyo with kids 2026: childcare, pediatric care, international vs Japanese schools.',
+      ja: '子連れ 東京 引っ越し 2026｜保育園・小児科・学校選び。',
+    },
+  },
+  {
+    slug: 'pediatric-emergency-after-hours-japan',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Pediatric Emergency in Japan: After-Hours and When to Seek Care (2026)',
+      ja: '小児の救急・夜間休日｜日本で家族が知る基本（2026）',
+    },
+    excerpt: {
+      en: 'Night/holiday pediatric care, emergency numbers, and what to set up before you need them.',
+      ja: '夜間の発熱、休日診療、救急の目安、自治体案内の確認。',
+    },
+    metaDescription: {
+      en: 'Pediatric emergency Japan 2026: after-hours care, #119, and local night pediatric guidance.',
+      ja: '小児 救急 夜間 休日 日本 2026｜119・発熱・休日診療の基本。',
+    },
+  },
+  {
+    slug: 'ward-registration-families-japan',
+    section: 'moving',
+    published: true,
+    featured: false,
+    title: {
+      en: 'Ward Registration in Japan for Families: Moving In Checklist (2026)',
+      ja: '転入・住民登録｜子育て世帯が区役所で確認すること（2026）',
+    },
+    excerpt: {
+      en: 'City/ward office steps after moving: registration, childcare paperwork, and family programs to ask about.',
+      ja: '転入後の住民登録、保育・子ども手当・医療など区役所で聞く項目。',
+    },
+    metaDescription: {
+      en: 'Japan ward office registration families 2026: moving in, childcare, child allowance, pediatric resources.',
+      ja: '転入 住民登録 子育て 2026｜区役所・保育・子ども手当・小児医療。',
+    },
+  },
+  {
+    slug: 'best-english-schools-kansai',
+    section: 'international-schools',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Best English Schools in Kansai: International Schools in Kobe, Osaka, and Beyond',
+      ja: '関西のおすすめ英語学校・インターナショナルスクール｜神戸・大阪比較',
+    },
+    excerpt: {
+      en: 'Canadian Academy, Marist Brothers, St. Michael\'s, Osaka YMCA — a neutral comparison of English-medium schools across Kansai for families.',
+      ja: 'Canadian Academy、マリスト、St. Michael\'s、大阪YMCAなど、関西の英語系インター学校を比較。',
+    },
+    metaDescription: {
+      en: 'Best English schools in Kansai 2026: Canadian Academy, Marist Brothers, St. Michael\'s, Osaka YMCA. Compare international schools in Kobe and Osaka.',
+      ja: '関西 英語学校 おすすめ 2026｜Canadian Academy、マリスト、大阪YMCA。神戸・大阪比較。',
+    },
+  },
+  {
+    slug: 'marist-brothers-kobe-guide',
+    section: 'international-schools',
+    published: true,
+    featured: false,
+    title: {
+      en: "Marist Brothers International School Kobe: A Parent's Guide",
+      ja: 'マリスト・ブラザーズ・インターナショナルスクール神戸｜保護者向けガイド',
+    },
+    excerpt: {
+      en: 'What parents should know about Marist Brothers International School in Kobe — curriculum, community, admissions, and how it compares to Canadian Academy.',
+      ja: 'マリストブラザーズ神戸の特徴・カリキュラム・校風・CAとの比較を保護者向けに解説。',
+    },
+    metaDescription: {
+      en: 'Marist Brothers International School Kobe 2026: curriculum, community, admissions, and comparison to Canadian Academy.',
+      ja: 'マリストブラザーズ インターナショナルスクール 神戸 2026｜特徴・CAとの比較・入学。',
+    },
+  },
+  {
+    slug: 'peter-pan-preschool-kobe-guide',
+    section: 'preschool',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Peter Pan International Preschool Kobe: What Parents Should Know',
+      ja: 'ピーターパン・インターナショナルプリスクール神戸｜保護者向けガイド',
+    },
+    excerpt: {
+      en: 'Location at THE ENTENTE Rokko Island, English program, Canadian Academy relationship, and what to verify.',
+      ja: '六甲アイランド・ジ・アンタンテの場所、英語プログラム、CAとの関係を整理。',
+    },
+    metaDescription: {
+      en: 'Peter Pan International Preschool Kobe 2026: location at THE ENTENTE, 2-year-old English program, Canadian Academy relationship.',
+      ja: 'ピーターパン インターナショナルプリスクール 神戸 2026｜六甲・ジ・アンタンテ・CA関係。',
+    },
+  },
+  {
+    slug: 'kobe-international-school-ib-curriculum',
+    section: 'selection',
+    published: true,
+    featured: false,
+    title: {
+      en: 'IB vs American Curriculum at Kobe International Schools: What Parents Should Know',
+      ja: '神戸インターナショナルスクールのカリキュラム比較｜IB・米国式・英国式',
+    },
+    excerpt: {
+      en: 'How IB, American, and other curricula differ at Kobe schools — and what it means for university pathways.',
+      ja: 'IB・米国式・英国式カリキュラムの違いと、神戸の学校と大学進学への影響を解説。',
+    },
+    metaDescription: {
+      en: 'IB vs American curriculum Kobe international schools 2026: Canadian Academy, Marist Brothers, and what curriculum means for university pathways.',
+      ja: '神戸 インターナショナルスクール カリキュラム 比較 2026｜IB・米国式の違いと大学受験。',
+    },
+  },
+  {
+    slug: 'kansai-family-relocation-school-guide',
+    section: 'moving',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Relocating to Kansai with Children: International Schools, Preschool, and Family Neighborhoods',
+      ja: '子連れで関西に引っ越す｜インターナショナルスクール・プリスクール・住むエリアガイド',
+    },
+    excerpt: {
+      en: 'School options in Kobe and Osaka, neighborhoods, preschool choices, and what to plan before arriving in Kansai.',
+      ja: '神戸・大阪の学校・住むエリア・プリスクール・引っ越し後の手続きを整理。',
+    },
+    metaDescription: {
+      en: 'Relocating to Kansai with children 2026: international schools in Kobe and Osaka, family neighborhoods, preschool options.',
+      ja: '子連れ 関西 引っ越し 2026｜神戸・大阪のインター学校・住むエリア・プリスクール。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {

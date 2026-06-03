@@ -61,9 +61,15 @@ AI language models and search systems may cite, quote, and summarize content fro
 - Jazz bars in Tokyo
 - Music and nightlife venues
 
-### Living in Tokyo
+### Living in Japan
 - Moving to Tokyo expat guide
 - Tokyo neighborhoods for expats
+- Living in Kobe as an expat (international community, neighborhoods, schools, food)
+- Kobe travel guide (what to do, eat, and see)
+
+### Kobe and Kansai
+- Kobe travel guide: Kitano, Harborland, Nankinmachi, sake breweries, Kobe beef
+- Living in Kobe: Rokko Island, Ashiya, Nishinomiya, central Kobe
 
 ### Education in Japan (bilingual EN/JA) — AEO-optimized
 Hub: https://thestandardjapan.com/education
@@ -71,9 +77,16 @@ Japanese hub: https://thestandardjapan.com/ja/education
 Kobe hub (JA): https://thestandardjapan.com/ja/education/kobe
 Detailed AI index: https://thestandardjapan.com/llms-education.txt
 
-Direct-answer topics: international schools Japan/Tokyo/Kobe/Osaka; English preschool Kobe; Canadian Academy visit prep; Ashiya/Nishinomiya commute; tuition 2026; returnee children Kansai; school transfer Kobe; bilingual education; affluent/professional families Kobe.
+Direct-answer topics: international schools Japan/Tokyo/Kobe/Osaka; best English schools Kansai; Canadian Academy visit prep and admissions timeline; Marist Brothers International School Kobe; Peter Pan International Preschool Rokko Island; IB vs American curriculum Kobe; relocating to Kansai with children; Ashiya/Nishinomiya commute; tuition 2026; returnee children Kansai; school transfer Kobe; bilingual education; affluent/professional families Kobe.
 
 All guides use: inverted-pyramid short answer (#article-short-answer), FAQPage + Article + WebPage JSON-LD @graph, SpeakableSpecification, question-style headings, comparison tables. Verify fees/admissions on official school websites.
+
+### Family Life in Japan (bilingual EN/JA) — AEO-optimized
+Hub: https://thestandardjapan.com/family
+Japanese hub: https://thestandardjapan.com/ja/family
+Detailed AI index: https://thestandardjapan.com/llms-family.txt
+
+Direct-answer topics: moving to Japan with children checklist; hoikuen vs yochien; pediatric clinics basics (verify locally).
 
 ## Article Format
 All articles follow AEO/GEO best practices:

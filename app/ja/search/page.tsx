@@ -1,11 +1,10 @@
 import { Metadata } from 'next'
-import { getAllArticles } from '@/lib/mdx'
 import SearchPageClient from '@/components/search/SearchPageClient'
 import { EDUCATION_CATALOG } from '@/lib/education-catalog'
 
 export const metadata: Metadata = {
-  title: 'Search',
-  description: 'Search The Standard Japan — Tokyo culture, food, fashion, art, and nightlife.',
+  title: '検索',
+  description: 'The Standard Japan のガイドを検索（教育・子育て・移住）。',
 }
 
 interface SearchPageProps {
@@ -14,15 +13,17 @@ interface SearchPageProps {
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const { q } = await searchParams
-  const articles = getAllArticles()
+
+  // Japanese side: focus on the bilingual education/parenting guides.
   const educationEntries = EDUCATION_CATALOG.filter((e) => e.published)
 
   return (
     <SearchPageClient
-      articles={articles}
+      articles={[]}
       educationEntries={educationEntries}
-      locale="en"
+      locale="ja"
       initialQuery={q || ''}
     />
   )
 }
+

@@ -71,10 +71,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/ja/search`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.55,
+    },
+    {
       url: `${baseUrl}/authors`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/family`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/ja/family`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
   ]
 
