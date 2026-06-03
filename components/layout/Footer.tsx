@@ -151,6 +151,9 @@ export default function Footer() {
             <Link href="/privacy" className="font-accent text-[11px] text-muted hover:text-content transition-colors tracking-wider">
               Privacy
             </Link>
+            <Link href="/terms" className="font-accent text-[11px] text-muted hover:text-content transition-colors tracking-wider">
+              Terms
+            </Link>
           </div>
           <div className="flex items-center gap-6">
             <a

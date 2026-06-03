@@ -9,6 +9,7 @@ import ArticleHero from '@/components/article/ArticleHero'
 import AuthorProfile from '@/components/article/AuthorProfile'
 import ArticleBody from '@/components/article/ArticleBody'
 import ArticleCard from '@/components/article/ArticleCard'
+import ShareButtons from '@/components/article/ShareButtons'
 import NewsletterBanner from '@/components/home/NewsletterBanner'
 import ReadingProgress from '@/components/article/ReadingProgress'
 
@@ -160,22 +161,23 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             </div>
           )}
 
-          {/* Tags */}
-          {article.tags && article.tags.length > 0 && (
-            <div className="pt-12">
-              <div className="border-t border-border pt-8 flex flex-wrap gap-2">
-                {article.tags.map((tag) => (
-                  <a
+          {/* Tags + Share */}
+          <div className="pt-12">
+            <div className="border-t border-border pt-8 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-2">
+                {article.tags?.map((tag) => (
+                  <Link
                     key={tag}
-                    href={`/search?q=${encodeURIComponent(tag)}`}
+                    href={`/tags/${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`}
                     className="font-accent text-[10px] tracking-widest text-muted uppercase border border-border px-3 py-1.5 hover:border-accent hover:text-content transition-colors"
                   >
                     {tag}
-                  </a>
+                  </Link>
                 ))}
               </div>
+              <ShareButtons title={article.title} url={articleUrl} />
             </div>
-          )}
+          </div>
 
           {/* Read next */}
           {readNext && (
