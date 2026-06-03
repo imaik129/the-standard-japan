@@ -100,6 +100,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     url: articleUrl,
     articleSection: article.category,
     wordCount: article.content.split(/\s+/).length,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.article-excerpt', '.short-answer'],
+    },
   }
 
   const faq = extractFaqFromContent(article.content)
