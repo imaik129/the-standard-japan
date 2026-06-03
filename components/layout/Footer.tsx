@@ -131,12 +131,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="mailto:hello@thestandardjapan.com"
+                <Link
+                  href="/contact"
                   className="font-accent text-xs text-muted hover:text-content transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -144,9 +144,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-accent text-[11px] text-muted tracking-wider">
-            © {currentYear} The Standard Japan. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="font-accent text-[11px] text-muted tracking-wider">
+              © {currentYear} The Standard Japan. All rights reserved.
+            </p>
+            <Link href="/privacy" className="font-accent text-[11px] text-muted hover:text-content transition-colors tracking-wider">
+              Privacy
+            </Link>
+          </div>
           <div className="flex items-center gap-6">
             <a
               href="https://twitter.com/thestandardjapan"

@@ -82,12 +82,12 @@ export default function AboutPage() {
           <p className="font-body text-muted mb-6">
             Pitches, press inquiries, tips, collaborations.
           </p>
-          <a
-            href="mailto:hello@thestandardjapan.com"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 bg-accent text-white font-accent font-semibold text-sm tracking-widest uppercase px-8 py-4 hover:bg-red-700 transition-colors"
           >
-            hello@thestandardjapan.com
-          </a>
+            Send us a message
+          </Link>
 
           <div className="mt-8">
             <Link
