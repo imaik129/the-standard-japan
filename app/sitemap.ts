@@ -1,10 +1,11 @@
 import { MetadataRoute } from 'next'
-import { getAllArticles, CATEGORIES } from '@/lib/mdx'
+import { getAllArticles, getAllJaArticles, CATEGORIES } from '@/lib/mdx'
 import { getAllEducationArticles } from '@/lib/education'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thestandardjapan.com'
   const articles = getAllArticles()
+  const jaArticles = getAllJaArticles()
 
   const articleUrls = articles.map((article) => ({
     url: `${baseUrl}/${article.category}/${article.slug}`,
@@ -96,6 +97,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  const jaArticleUrls = jaArticles.map((article) => ({
+    url: `${baseUrl}/ja/${article.category}/${article.slug}`,
+    lastModified: new Date(article.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  const tagSet = new Set<string>()
+  articles.forEach((a) => a.tags?.forEach((t) => tagSet.add(t.toLowerCase().replace(/\s+/g, '-'))))
+  const tagUrls = Array.from(tagSet).map((tag) => ({
+    url: `${baseUrl}/tags/${encodeURIComponent(tag)}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }))
+
   const educationHubUrls = [
     {
       url: `${baseUrl}/education`,
@@ -121,6 +138,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.95,
     },
+    {
+      url: `${baseUrl}/education/tokyo`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.92,
+    },
+    {
+      url: `${baseUrl}/ja/education/tokyo`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.92,
+    },
   ]
 
   const educationArticleUrls = (['en', 'ja'] as const).flatMap((locale) =>
@@ -137,6 +166,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryUrls,
     ...authorUrls,
     ...articleUrls,
+    ...jaArticleUrls,
+    ...tagUrls,
     ...educationHubUrls,
     ...educationArticleUrls,
   ]

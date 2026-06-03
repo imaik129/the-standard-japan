@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 
 const ARTICLES_DIR = path.join(process.cwd(), 'content/articles')
+const JA_ARTICLES_DIR = path.join(process.cwd(), 'content/articles/ja')
 
 export interface ArticleFrontmatter {
   title: string
@@ -70,6 +71,34 @@ export function getRelatedArticles(
   return getAllArticles()
     .filter((a) => a.slug !== currentSlug && a.category === category)
     .slice(0, limit)
+}
+
+export function getAllJaArticles(): ArticleFrontmatter[] {
+  if (!fs.existsSync(JA_ARTICLES_DIR)) return []
+  const files = fs.readdirSync(JA_ARTICLES_DIR).filter((f) => f.endsWith('.mdx'))
+  const articles = files.map((filename) => {
+    const filePath = path.join(JA_ARTICLES_DIR, filename)
+    const fileContent = fs.readFileSync(filePath, 'utf8')
+    const { data } = matter(fileContent)
+    return data as ArticleFrontmatter
+  })
+  return articles.sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  )
+}
+
+export function getJaArticleBySlug(slug: string): Article | null {
+  if (!fs.existsSync(JA_ARTICLES_DIR)) return null
+  const files = fs.readdirSync(JA_ARTICLES_DIR).filter((f) => f.endsWith('.mdx'))
+  for (const filename of files) {
+    const filePath = path.join(JA_ARTICLES_DIR, filename)
+    const fileContent = fs.readFileSync(filePath, 'utf8')
+    const { data, content } = matter(fileContent)
+    if (data.slug === slug) {
+      return { ...(data as ArticleFrontmatter), content }
+    }
+  }
+  return null
 }
 
 export { CATEGORIES } from './categories'

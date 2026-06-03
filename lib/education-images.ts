@@ -19,4 +19,8 @@ export const EDUCATION_HUB_HERO = {
     ja: 'https://images.unsplash.com/photo-1574263867127-a8d92288a124?w=1600&q=85',
     en: 'https://images.unsplash.com/photo-1574263867127-a8d92288a124?w=1600&q=85',
   },
+  tokyo: {
+    ja: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85',
+    en: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85',
+  },
 }

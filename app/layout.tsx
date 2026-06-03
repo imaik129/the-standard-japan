@@ -44,10 +44,10 @@ export const metadata: Metadata = {
       'The definitive guide to Japan. Culture, food, fashion, art, nightlife — the real Tokyo. Your go-to resource for everything Japan.',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80',
         width: 1200,
         height: 630,
-        alt: 'The Standard Japan',
+        alt: 'The Standard Japan — Tokyo cityscape',
       },
     ],
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: 'The Standard Japan — Tokyo\'s Underground, Unfiltered.',
     description:
       'The definitive guide to Japan. Your go-to resource for Tokyo, culture, food, and more.',
-    images: ['/og-image.png'],
+    images: ['https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80'],
     creator: '@thestandardjapan',
   },
   robots: {
@@ -104,6 +104,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/thestandardlogo.png" type="image/png" />
         <link rel="alternate" type="application/rss+xml" title="The Standard Japan RSS" href="/feed" />
+        <link rel="alternate" type="application/rss+xml" title="The Standard Japan — Education" href="/education/feed" />
         <meta name="google-site-verification" content="Zkq067MR7uMRFG3wm0M9lVAhnRdYufD-ZiI2XPW-SqA" />
       </head>
       <body className="bg-background text-content antialiased">
