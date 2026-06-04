@@ -1,6 +1,28 @@
+import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 const components = {
+  img: ({ src, alt }: { src?: string; alt?: string }) => {
+    if (!src) return null
+    return (
+      <figure className="my-10 -mx-2 sm:mx-0">
+        <div className="relative w-full aspect-[16/10] overflow-hidden border border-border bg-surface-elevated">
+          <Image
+            src={src}
+            alt={alt || ''}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 672px"
+          />
+        </div>
+        {alt ? (
+          <figcaption className="mt-2 px-1 font-accent text-xs text-muted text-center tracking-wide leading-relaxed">
+            {alt}
+          </figcaption>
+        ) : null}
+      </figure>
+    )
+  },
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2 className="font-display text-2xl md:text-3xl font-bold text-content mt-12 mb-4" {...props} />
   ),
