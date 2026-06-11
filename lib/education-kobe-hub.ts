@@ -11,6 +11,8 @@ export const KOBE_HUB_START_SLUGS = [
 
 export const KOBE_HUB_SLUGS = [
   'osaka-vs-kobe-international-schools',
+  'tokyo-vs-kansai-international-schools',
+  'osaka-international-school-neighborhoods-commute',
   'kyoto-international-schools-guide',
   'best-international-schools-kobe',
   'best-english-schools-kansai',

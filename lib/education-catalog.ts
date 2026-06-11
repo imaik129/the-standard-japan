@@ -875,6 +875,78 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '京都 インターナショナルスクール 2026｜KIS、大阪・神戸への通学。京都の英語教育ガイド。',
     },
   },
+  {
+    slug: 'yokohama-international-schools-guide',
+    section: 'international-schools',
+    published: true,
+    featured: true,
+    title: {
+      en: "International Schools in Yokohama: A Parent's Guide for Greater Tokyo Families",
+      ja: '横浜のインターナショナルスクール｜首都圏南部の英語教育ガイド',
+    },
+    excerpt: {
+      en: 'Saint Maur, Yokohama International School, and other English-medium options — why Yokohama is a major international education hub south of Tokyo.',
+      ja: 'サンモア、横浜インター（YIS）など — 東京南部・神奈川のインターナショナルスクール市場を解説。',
+    },
+    metaDescription: {
+      en: 'International schools in Yokohama 2026: Saint Maur, YIS, and Greater Tokyo options. Guide for expat families in Kanagawa.',
+      ja: '横浜 インターナショナルスクール 2026｜サンモア・YIS・神奈川の英語学校。駐在・移住家庭向け。',
+    },
+  },
+  {
+    slug: 'returnee-children-schools-tokyo',
+    section: 'moving',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Returnee Children in Tokyo: School Options for Kikokushijo Families',
+      ja: '東京の帰国子女｜学校選びガイド（インター・日本の学校）',
+    },
+    excerpt: {
+      en: 'International, Japanese, and bilingual paths for returnee (kikokushijo) children settling in Tokyo — language, grade placement, and school selection.',
+      ja: '帰国子女の東京での学校選択 — インター、日本の学校、バイリンガル進路を整理。',
+    },
+    metaDescription: {
+      en: 'Returnee children Tokyo schools 2026: kikokushijo guide for international vs Japanese schools in Tokyo, ASIJ, Nishimachi, and public school options.',
+      ja: '帰国子女 東京 学校 2026｜インター vs 日本の学校。ASIJ・西町・公立の選び方。',
+    },
+  },
+  {
+    slug: 'tokyo-vs-kansai-international-schools',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Tokyo vs Kansai International Schools: Where Should Your Family Choose?',
+      ja: '東京 vs 関西 インターナショナルスクール｜どちらを選ぶ？',
+    },
+    excerpt: {
+      en: 'Comparing Tokyo and Kansai for international school families — school choice, cost, commute, lifestyle, and relocation decisions.',
+      ja: '東京と関西のインター教育を比較 — 学校数、学費、通学、ライフスタイル、移住の決め方。',
+    },
+    metaDescription: {
+      en: 'Tokyo vs Kansai international schools 2026: compare ASIJ, BST with Canadian Academy, Osaka schools. Relocation guide for expat families in Japan.',
+      ja: '東京 vs 関西 インターナショナルスクール 2026｜ASIJ・BSTとCA・大阪校の比較。駐在・移住家庭向け。',
+    },
+  },
+  {
+    slug: 'osaka-international-school-neighborhoods-commute',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Where to Live in Osaka for International School: Neighborhoods and Commute Guide',
+      ja: '大阪でインター通学に住むエリア｜学区・通勤ガイド',
+    },
+    excerpt: {
+      en: 'Toyonaka, Suita, central Osaka, and Kyoto-side areas — how families choose neighborhoods for OYIS, OISKG, and Senri commutes.',
+      ja: '豊中・吹田・都心 — 大阪YMCA、OIS、千里への通学に合わせた住むエリアを整理。',
+    },
+    metaDescription: {
+      en: 'Best Osaka neighborhoods for international school families 2026: OYIS, OISKG, Senri commute zones. Where expat families live in Kansai.',
+      ja: '大阪 インター 住むエリア 2026｜OYIS・OIS・千里の通学圏。関西の駐在家族向け。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {

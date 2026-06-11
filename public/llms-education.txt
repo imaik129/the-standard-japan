@@ -58,6 +58,24 @@ A: Kyoto International School (KIS) is the main local option. Many Kyoto familie
 Q: 大阪と神戸、インターナショナルスクールはどちらが良い？
 A: 住む場所で決まることが多い。神戸圏はCA・マリスト、大阪圏はYMCA・OIS・千里など。 https://thestandardjapan.com/ja/education/osaka-vs-kobe-international-schools
 
+Q: International schools in Yokohama?
+A: Saint Maur International School and Yokohama International School (YIS) are the main established options. Families choose Yokohama for bay-area lifestyle and Kanagawa community. https://thestandardjapan.com/education/yokohama-international-schools-guide
+
+Q: Tokyo vs Kansai international schools — which is better?
+A: Tokyo has more school choice (ASIJ, BST, Nishimachi); Kansai has community-focused schools (Canadian Academy, Osaka YMCA) and often shorter commutes. Choose based on work location. https://thestandardjapan.com/education/tokyo-vs-kansai-international-schools
+
+Q: Returnee children (kikokushijo) school options in Tokyo?
+A: International schools for English continuity, Japanese schools for long-term integration, Nishimachi for bilingual. Grade placement requires admissions consultation. https://thestandardjapan.com/education/returnee-children-schools-tokyo
+
+Q: Where to live in Osaka for international school?
+A: Central Osaka for OYIS; northern Osaka (Suita, Toyonaka) for OISKG and Senri. Test rush-hour commutes before signing a lease. https://thestandardjapan.com/education/osaka-international-school-neighborhoods-commute
+
+Q: 横浜のインターナショナルスクールは？
+A: サンモア・インターナショナルスクール、横浜インターナショナルスクール（YIS）が代表的。 https://thestandardjapan.com/ja/education/yokohama-international-schools-guide
+
+Q: 東京と関西、インターはどちら？
+A: 勤務地で決まる。東京は選択肢最多、関西は通学・生活費で有利なことも。 https://thestandardjapan.com/ja/education/tokyo-vs-kansai-international-schools
+
 ## Published guides (2026) — slug paths under /education/ and /ja/education/
 
 best-international-schools-japan
@@ -91,6 +109,10 @@ tokyo-international-school-admissions-guide
 tokyo-international-school-neighborhoods-commute
 osaka-vs-kobe-international-schools
 kyoto-international-schools-guide
+yokohama-international-schools-guide
+returnee-children-schools-tokyo
+tokyo-vs-kansai-international-schools
+osaka-international-school-neighborhoods-commute
 
 ## Content format (AEO)
 - Direct answer at top (#article-short-answer / frontmatter shortAnswer)
