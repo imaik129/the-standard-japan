@@ -803,6 +803,78 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '子連れ 関西 引っ越し 2026｜神戸・大阪のインター学校・住むエリア・プリスクール。',
     },
   },
+  {
+    slug: 'tokyo-international-school-admissions-guide',
+    section: 'selection',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Tokyo International School Admissions: Timeline, Documents, and What to Expect',
+      ja: '東京インターナショナルスクールの入学｜出願スケジュール・必要書類・準備の進め方',
+    },
+    excerpt: {
+      en: 'When to apply to ASIJ, BST, Nishimachi, and other Tokyo international schools — documents, assessments, waitlists, and planning timeline.',
+      ja: 'ASIJ・BST・西町など東京インターへの出願時期、必要書類、英語テスト、ウェイトリストまでの準備ガイド。',
+    },
+    metaDescription: {
+      en: 'Tokyo international school admissions 2026: when to apply to ASIJ, BST, Nishimachi. Documents, timeline, and planning steps for expat families.',
+      ja: '東京 インターナショナルスクール 入学 2026｜ASIJ・BST・西町の出願時期・書類・スケジュール。',
+    },
+  },
+  {
+    slug: 'tokyo-international-school-neighborhoods-commute',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Where to Live in Tokyo for International School: Neighborhoods and Commute Guide',
+      ja: '東京でインター通学に住むエリア｜学区・通勤・家族の住み方ガイド',
+    },
+    excerpt: {
+      en: 'Minato, Setagaya, Chofu, Yokohama — how Tokyo families choose neighborhoods based on international school commutes and daily logistics.',
+      ja: '港区・世田谷・調布・横浜 — インター校選びに合わせた東京の住むエリアと通学の現実。',
+    },
+    metaDescription: {
+      en: 'Best Tokyo neighborhoods for international school families 2026: ASIJ, BST, Nishimachi commute zones, train lines, and where expat families live.',
+      ja: '東京 インター 住むエリア 2026｜ASIJ・BST・西町の通学圏、路線、駐在家族の住宅選び。',
+    },
+  },
+  {
+    slug: 'osaka-vs-kobe-international-schools',
+    section: 'city-guides',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Osaka vs Kobe International Schools: Which Is Better for Your Family?',
+      ja: '大阪 vs 神戸 インターナショナルスクール｜関西でどちらを選ぶ？',
+    },
+    excerpt: {
+      en: 'Canadian Academy and Marist in Kobe vs Osaka YMCA and OIS — curriculum, commute, community, and how Kansai families choose.',
+      ja: 'CA・マリスト（神戸）と大阪YMCA・OIS — カリキュラム、通学、コミュニティで関西の2教育圏を比較。',
+    },
+    metaDescription: {
+      en: 'Osaka vs Kobe international schools 2026: compare Canadian Academy, Marist Brothers, Osaka YMCA, OIS. Commute and curriculum for Kansai families.',
+      ja: '大阪 vs 神戸 インターナショナルスクール 2026｜CA・マリスト・大阪YMCA・OIS比較。関西の駐在・移住家庭向け。',
+    },
+  },
+  {
+    slug: 'kyoto-international-schools-guide',
+    section: 'international-schools',
+    published: true,
+    featured: true,
+    title: {
+      en: 'International Schools in Kyoto: Options for Expat and Bilingual Families',
+      ja: '京都のインターナショナルスクール｜英語教育の選択肢と大阪通学',
+    },
+    excerpt: {
+      en: 'Kyoto International School, commuting to Osaka schools, and what Kyoto-resident families should know about English-medium education.',
+      ja: '京都インターナショナルスクール（KIS）、大阪の校への通学 — 京都在住家庭向けガイド。',
+    },
+    metaDescription: {
+      en: 'International schools in Kyoto 2026: Kyoto International School, commuting to Osaka and Kobe schools. Guide for expat families in Kyoto.',
+      ja: '京都 インターナショナルスクール 2026｜KIS、大阪・神戸への通学。京都の英語教育ガイド。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {

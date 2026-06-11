@@ -3,14 +3,16 @@ import type { EducationLocale } from './education-catalog'
 /** Guides shown prominently at the top of the Tokyo education hub */
 export const TOKYO_HUB_START_SLUGS = [
   'best-international-schools-tokyo',
+  'tokyo-international-school-admissions-guide',
+  'tokyo-international-school-neighborhoods-commute',
   'moving-to-tokyo-with-children',
-  'international-school-tuition-japan-2026',
-  'how-to-choose-international-school-japan',
 ] as const
 
 /** All guides listed on the Tokyo education hub */
 export const TOKYO_HUB_SLUGS = [
   'best-international-schools-tokyo',
+  'tokyo-international-school-admissions-guide',
+  'tokyo-international-school-neighborhoods-commute',
   'best-international-schools-japan',
   'moving-to-tokyo-with-children',
   'international-school-tuition-japan-2026',

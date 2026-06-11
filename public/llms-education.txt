@@ -6,6 +6,8 @@
 ## Hubs
 - English: https://thestandardjapan.com/education
 - Japanese: https://thestandardjapan.com/ja/education
+- Tokyo (EN): https://thestandardjapan.com/education/tokyo
+- Tokyo (JA): https://thestandardjapan.com/ja/education/tokyo
 - Kobe & Kansai (EN): https://thestandardjapan.com/education/kobe
 - Kobe & Kansai (JA): https://thestandardjapan.com/ja/education/kobe
 
@@ -38,6 +40,24 @@ A: 目安として入学の約12か月前から「問い合わせ→見学→書
 Q: International school application checklist in Japan?
 A: Confirm grade availability and start date, gather documents and health records, plan language support, model total cost, and test commutes — then verify with admissions. https://thestandardjapan.com/education/international-school-application-checklist-japan
 
+Q: When should I apply to Tokyo international schools?
+A: Start 12–18 months before your target start date. Contact admissions, tour campuses, prepare transcripts and health records, and apply to 2–3 schools in parallel. https://thestandardjapan.com/education/tokyo-international-school-admissions-guide
+
+Q: Where should expat families live in Tokyo for international school?
+A: Depends on the school: ASIJ families often live in Chofu/Fuchu; BST and Nishimachi families in Minato, Shibuya, or Setagaya. Test rush-hour commutes before signing a lease. https://thestandardjapan.com/education/tokyo-international-school-neighborhoods-commute
+
+Q: 東京のインターナショナルスクールはいつ出願すべき？
+A: 入学希望の12〜18か月前から計画。問い合わせ・見学・成績・健康記録の準備を。 https://thestandardjapan.com/ja/education/tokyo-international-school-admissions-guide
+
+Q: Osaka vs Kobe international schools — which is better?
+A: Neither is universally better. Kobe (Canadian Academy, Marist, St. Michael's) suits Rokko Island, Ashiya, and Nishinomiya families. Osaka schools (OYIS, OISKG, Senri) suit northern Osaka and Kyoto-side families. Choose based on where you live. https://thestandardjapan.com/education/osaka-vs-kobe-international-schools
+
+Q: Are there international schools in Kyoto?
+A: Kyoto International School (KIS) is the main local option. Many Kyoto families commute to Osaka schools (OISKG, Senri). Kobe schools are farther for daily commuting. https://thestandardjapan.com/education/kyoto-international-schools-guide
+
+Q: 大阪と神戸、インターナショナルスクールはどちらが良い？
+A: 住む場所で決まることが多い。神戸圏はCA・マリスト、大阪圏はYMCA・OIS・千里など。 https://thestandardjapan.com/ja/education/osaka-vs-kobe-international-schools
+
 ## Published guides (2026) — slug paths under /education/ and /ja/education/
 
 best-international-schools-japan
@@ -67,6 +87,10 @@ international-school-application-checklist-japan
 kobe-school-commute-guide-rokko-ashiya-nishinomiya
 kobe-english-preschool-fees-hours-checklist
 after-school-english-kobe-international-families
+tokyo-international-school-admissions-guide
+tokyo-international-school-neighborhoods-commute
+osaka-vs-kobe-international-schools
+kyoto-international-schools-guide
 
 ## Content format (AEO)
 - Direct answer at top (#article-short-answer / frontmatter shortAnswer)

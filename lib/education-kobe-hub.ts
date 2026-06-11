@@ -2,14 +2,16 @@ import type { EducationLocale } from './education-catalog'
 
 /** Guides shown on the Kobe / Kansai education hub pages */
 export const KOBE_HUB_START_SLUGS = [
-  'kobe-affluent-families-education',
+  'osaka-vs-kobe-international-schools',
   'best-english-schools-kansai',
-  'best-international-preschools-kobe',
+  'kyoto-international-schools-guide',
   'best-international-schools-kobe',
   'preschool-before-canadian-academy',
 ] as const
 
 export const KOBE_HUB_SLUGS = [
+  'osaka-vs-kobe-international-schools',
+  'kyoto-international-schools-guide',
   'best-international-schools-kobe',
   'best-english-schools-kansai',
   'best-international-preschools-kobe',
