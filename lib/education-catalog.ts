@@ -947,6 +947,60 @@ export const EDUCATION_CATALOG: EducationCatalogEntry[] = [
       ja: '大阪 インター 住むエリア 2026｜OYIS・OIS・千里の通学圏。関西の駐在家族向け。',
     },
   },
+  {
+    slug: 'kobe-international-preschool-comparison',
+    section: 'preschool',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Peter Pan vs Kinder Kids vs Shukugawa: Comparing International Preschools in Kobe and Hanshin',
+      ja: '神戸でインターナショナルプリスクールはどこに入れる？ピーターパン・キンダーキッズ・夙川比較',
+    },
+    excerpt: {
+      en: 'A side-by-side comparison of Peter Pan International Preschool, Kinder Kids, and Shukugawa-area preschools — immersion, location, and pathways.',
+      ja: 'ピーターパン、キンダーキッズ、夙川エリアを英語環境・立地・インター進学パスで比較。',
+    },
+    metaDescription: {
+      en: 'Compare international preschools in Kobe 2026: Peter Pan International Preschool, Kinder Kids, Shukugawa options. Immersion, location, school pathways.',
+      ja: '神戸 インターナショナルプリスクール 比較 2026｜ピーターパン・キンダーキッズ・夙川。英語イマージョンと進学で選ぶ。',
+    },
+  },
+  {
+    slug: 'international-athletes-kobe-education',
+    section: 'moving',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Where International Athletes in Japan Put Their Kids: The Kobe Education Playbook',
+      ja: '来日した外国人アスリートは子どもをどこに入れる？神戸の教育プレイブック',
+    },
+    excerpt: {
+      en: 'Mid-season arrivals, uncertain contracts, English continuity — how athlete families in Kansai solve the school problem with the Rokko Island ecosystem.',
+      ja: 'シーズン途中の来日、契約の不確実性 — 関西の外国人選手家族が選ぶ学校・プリスクールの実際。',
+    },
+    metaDescription: {
+      en: 'Where pro athletes in Japan send their kids 2026: Kobe international schools, Peter Pan preschool Rokko Island, and the Kansai athlete family playbook.',
+      ja: '外国人アスリート 子ども 学校 2026｜神戸インター・ピーターパン六甲。関西のスポーツ選手家族向け。',
+    },
+  },
+  {
+    slug: 'doctors-medical-families-kobe-education',
+    section: 'preschool',
+    published: true,
+    featured: true,
+    title: {
+      en: 'Where Doctors in Kobe Send Their Kids: Education Planning for Medical Families',
+      ja: '神戸の医師は子どもをどこに入れる？医療従事者家庭の教育設計',
+    },
+    excerpt: {
+      en: 'Hospital schedules and high academic expectations — how physician families in Kobe, Ashiya, and Nishinomiya structure preschool and school choices.',
+      ja: '当直・学会と高い教育意識 — 神戸・芦屋・西宮の医師家庭のプリスクール・学校設計。',
+    },
+    metaDescription: {
+      en: 'Where doctors in Kobe send their kids 2026: full-day international preschool, Peter Pan Rokko Island, Canadian Academy pathway for medical families.',
+      ja: '医師 子ども 教育 神戸 2026｜終日英語プリスクール・ピーターパン六甲・CA進路。',
+    },
+  },
 ]
 
 export function getCatalogEntry(slug: string): EducationCatalogEntry | undefined {
