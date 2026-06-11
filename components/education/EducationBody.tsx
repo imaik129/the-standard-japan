@@ -82,6 +82,33 @@ function buildComponents(locale: EducationLocale) {
     strong: (props: React.HTMLAttributes<HTMLElement>) => (
       <strong className="font-semibold text-edu-content" {...props} />
     ),
+    // Span-based markup: MDX wraps standalone images in <p>, so block elements would be invalid nesting
+    img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
+      <span className="block my-10">
+        <span
+          className={`block relative w-full aspect-[16/9] rounded-xl overflow-hidden ${
+            isJa ? 'border border-edu-ja-border shadow-sm' : 'border border-edu-border'
+          }`}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={props.src}
+            alt={props.alt || ''}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </span>
+        {props.alt && (
+          <span
+            className={`block mt-3 text-sm text-center ${
+              isJa ? 'text-edu-ja-muted' : 'font-body text-edu-muted italic'
+            }`}
+          >
+            {props.alt}
+          </span>
+        )}
+      </span>
+    ),
     a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
       <a
         className={
